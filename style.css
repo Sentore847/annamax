@@ -14,6 +14,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   color: var(--primary-color);
@@ -21,6 +25,7 @@ body {
 
 a {
   text-decoration: none;
+  color: var(--primary-color);
 }
 
 svg {
@@ -38,7 +43,7 @@ svg {
 header {
   position: relative;
   height: 160px;
-  z-index: 53;
+  z-index: 4;
 }
 
 .top_header {
@@ -125,6 +130,7 @@ header {
   position: relative;
   width: 100px;
   cursor: pointer;
+  z-index: 100;
 }
 
 .selected-option {
@@ -141,7 +147,7 @@ header {
   width: 100%;
   border: 1px solid #ccc;
   background: none;
-  z-index: 10;
+  z-index: 4;
 }
 
 .options li {
@@ -177,7 +183,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 5;
+  z-index: 4;
 }
 
 .intro video {
@@ -187,18 +193,6 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
-}
-
-.intro::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #1c2b39;
-  opacity: 0.4;
 }
 
 .intro_content {
@@ -379,14 +373,17 @@ header {
 }
 
 .card_title {
-  margin-top: 30px;
+  margin: 25px 0;
   color: #1c2b39;
   text-align: center;
   font-weight: 700;
 }
 
 .service_card_list {
-  margin-top: 30px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .service_card_list li {
@@ -399,7 +396,7 @@ header {
 .card_button_block {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-self: flex-end;
 }
 
 .card_btn {
@@ -419,6 +416,99 @@ header {
   border: 1px solid var(--button-color);
 }
 
+#modal_window {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#modal_window.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal_form {
+  position: relative;
+  background: #fff;
+  padding: 50px 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.modal_close_btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: #000;
+  font-size: 24px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group select {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #ff9900;
+}
+
+.modal_form_title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.modal_form_services {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_labels {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.modal_form_services label {
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 5px;
+}
+
+.modal_form_services input[type="checkbox"] {
+  accent-color: #007bff;
+}
+
 /* Clients */
 
 .clients {
@@ -426,7 +516,7 @@ header {
   padding: 100px 0;
   background: url(img/clientsbg.jpg) no-repeat;
   background-size: cover;
-  z-index: 5;
+  z-index: 4;
 }
 
 .clients::after {
@@ -499,16 +589,6 @@ header {
   z-index: 3;
 }
 
-.feedback::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #1c2b39;
-  opacity: 0.8;
-  z-index: -1;
-}
-
 .feedback_video_container {
   position: fixed;
   top: 0;
@@ -517,6 +597,16 @@ header {
   height: 100vh;
   overflow: hidden;
   z-index: -1;
+}
+
+.feedback_video_container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #1c2b39;
+  opacity: 0.8;
+  z-index: 1;
 }
 
 .feedback_video_container video {
@@ -537,17 +627,41 @@ header {
   gap: 100px;
 }
 
+.feedback_shedule {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.shedule_title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
 .feedback_shedule p {
-  font-size: 32px;
+  color: var(--icon-color);
+  font-size: 38px;
+  font-weight: 700;
+  text-shadow: 2px 2px 6px rgb(24, 24, 24);
+}
+
+.feedback_shedule p:last-child {
+  margin-top: 15px;
 }
 
 .feedback_form {
   background-color: #fff;
-  padding: 20px 30px;
+  padding: 70px 40px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 320px;
+  width: 500px;
 }
 
 .feedback_form h3 {
@@ -561,7 +675,6 @@ header {
 }
 
 input {
-  width: 100%;
   padding: 10px;
   font-size: 14px;
   border: 1px solid #ddd;
@@ -600,7 +713,7 @@ input:focus {
 .footer {
   position: relative;
   padding: 100px 0;
-  z-index: 5;
+  z-index: 4;
   background: #233545;
 }
 
