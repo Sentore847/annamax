@@ -42,7 +42,7 @@ svg {
 /* HEADER */
 header {
   position: relative;
-  height: 160px;
+  /* height: 160px; */
   z-index: 4;
 }
 
@@ -270,6 +270,10 @@ header {
 
 .about_image {
   flex: 1;
+}
+
+.about_image img {
+  width: 600px;
   height: 400px;
 }
 
@@ -321,7 +325,7 @@ header {
   font-weight: 700;
   padding-left: 10px;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 20px;
 }
 
 /* Serivces */
@@ -356,6 +360,7 @@ header {
 
 .services_cards {
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
 }
 
@@ -367,7 +372,15 @@ header {
   height: 640px;
 }
 
+.card_image_block {
+  max-height: 200px;
+}
+
 .card_image {
+  max-width: 100%;
+  height: auto;
+  margin-left: 80px;
+  margin-top: 20px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -389,7 +402,7 @@ header {
 .service_card_list li {
   padding: 10px;
   margin-left: 30px;
-  list-style-type: square;
+  list-style-type: disc;
   color: #1c2b39;
 }
 
@@ -578,7 +591,7 @@ header {
 }
 
 .counter_item_text {
-  font-size: 1.2rem;
+  font-size: 24px;
 }
 
 /* Feedback */
@@ -698,6 +711,10 @@ input:focus {
   border-radius: 2px;
 }
 
+.flag-icon img {
+  border: 1px solid #000;
+}
+
 .form_button {
   background-color: var(--button-color);
   color: #fff;
@@ -737,17 +754,13 @@ input:focus {
   flex-direction: column;
 }
 
-.footer_nav_title {
+.footer_title {
   margin-bottom: 40px;
 }
 
 .footer_socials {
   display: flex;
   flex-direction: column;
-}
-
-.footer_socials_title {
-  margin-bottom: 40px;
 }
 
 .footer_link {
@@ -764,4 +777,241 @@ input:focus {
 
 .copyright_text {
   text-align: center;
+}
+
+/* Media */
+@media screen and (max-width: 1264px) {
+  .container {
+    max-width: 1000px;
+  }
+
+  .services_cards {
+    display: flex;
+    justify-content: center;
+  }
+
+  .sevices_card_item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 33%;
+  }
+
+  .card_image {
+    margin-left: 0;
+  }
+
+  .card_button_block {
+    align-self: center;
+  }
+
+  .about_text p {
+    font-size: 12px;
+  }
+
+  .about_image img {
+    width: 400px;
+    height: 300px;
+  }
+
+  .figure_text {
+    font-size: 12px;
+  }
+
+  .about_info {
+    gap: 50px;
+  }
+}
+
+@media screen and (max-width: 1007px) {
+  .container {
+    max-width: 870px;
+  }
+
+  .intro_content_title {
+    font-size: 32px;
+  }
+  .intro_content_button {
+    padding: 10px 30px;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .container {
+    max-width: 640px;
+  }
+
+  .intro_content_title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .clients_content {
+    gap: 50px;
+  }
+
+  .about_image img {
+    width: 300px;
+    height: 200px;
+  }
+
+  .about_text p {
+    font-size: 10px;
+  }
+
+  .figure_text {
+    font-size: 12px;
+    margin-right: 10px;
+  }
+
+  .shedule_title {
+    font-size: 24px;
+  }
+
+  .feedback_shedule p {
+    font-size: 20px;
+  }
+
+  .sevices_card_item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+  }
+
+  .card_btn {
+    padding: 30px 90px;
+    margin: 50px;
+  }
+
+  .reviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .top_header_icon_title,
+  .top_header_icon_subtitle {
+    font-size: 10px;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .header_nav_link {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    max-width: 550px;
+  }
+
+  .about_text p {
+    font-size: 9;
+    font-weight: 400;
+  }
+
+  .about_image img {
+    width: 250px;
+    height: 150px;
+  }
+
+  .feedback_content {
+    gap: 50px;
+  }
+
+  .feedback_form {
+    padding: 20px;
+  }
+
+  .form_button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .shedule_title {
+    font-size: 18px;
+  }
+
+  .feedback_shedule p {
+    font-size: 14px;
+  }
+
+  .counter_item_number {
+    font-size: 24px;
+  }
+
+  .counter_item_text {
+    font-size: 16px;
+  }
+
+  .top_header_icon_text {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .top_header {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 552px) {
+  .container {
+    max-width: 400px;
+  }
+
+  .footer_address_title {
+    font-size: 16px;
+  }
+
+  .footer_title {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .footer_link {
+    font-size: 10px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="tel"],
+  .form-group select {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+
+  .shedule_title {
+    font-size: 14px;
+  }
+
+  .feedback_shedule p {
+    font-size: 12px;
+  }
+
+  .about_image img {
+    display: none;
+  }
+
+  .figure_text {
+    font-size: 10px;
+    font-weight: 400;
+  }
+
+  .review_item_img {
+    display: none;
+  }
+
+  .clients_content {
+    gap: 0;
+  }
+
+  .review_counter {
+    margin-top: 50px;
+  }
 }
