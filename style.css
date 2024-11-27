@@ -28,6 +28,10 @@ a {
   color: var(--primary-color);
 }
 
+a:hover {
+  color: var(--icon-color);
+}
+
 svg {
   width: 32px;
   height: 32px;
