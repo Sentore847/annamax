@@ -385,6 +385,24 @@ document.addEventListener("DOMContentLoaded", () => {
   counters.forEach((counter) => observer.observe(counter));
 });
 
+// Input Phone Validate
+const phoneInput = document.getElementById("phone_input");
+
+const austriaPhonePattern = /^\+43[0-9]{1,12}$/;
+
+function validatePhoneNumber() {
+  const phoneValue = phoneInput.value;
+
+  if (austriaPhonePattern.test(phoneValue)) {
+    phoneInput.style.border = "2px solid green";
+  } else {
+    phoneInput.style.border = "2px solid red";
+  }
+}
+
+// Слушаем изменения в поле
+phoneInput.addEventListener("input", validatePhoneNumber);
+
 // Close lang switcher
 
 // customSelect.addEventListener("click", function () {

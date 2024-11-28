@@ -532,6 +532,7 @@ header {
 }
 
 #calculate_button {
+  background-color: rgb(2, 150, 2);
   margin-top: 20px;
 }
 
