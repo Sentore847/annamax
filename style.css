@@ -25,7 +25,6 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--primary-color);
 }
 
 a:hover {
@@ -106,6 +105,7 @@ header {
 }
 
 .header_nav_link {
+  color: var(--primary-color);
   position: relative;
   margin-right: 30px;
   cursor: pointer;
@@ -227,7 +227,7 @@ header {
 
 .intro_content_button:hover {
   background: var(--primary-color);
-  color: var(--button-color);
+  color: var(--icon-color);
 }
 
 /* ABOUT */
@@ -433,6 +433,7 @@ header {
   border: 1px solid var(--button-color);
 }
 
+/* MODAL WINDOW */
 #modal_window {
   display: flex;
   justify-content: center;
@@ -524,6 +525,14 @@ header {
 
 .modal_form_services input[type="checkbox"] {
   accent-color: #007bff;
+}
+
+#result {
+  color: #000;
+}
+
+#calculate_button {
+  margin-top: 20px;
 }
 
 /* Clients */
@@ -768,6 +777,7 @@ input:focus {
 }
 
 .footer_link {
+  color: var(--primary-color);
   cursor: pointer;
   margin-bottom: 20px;
 }

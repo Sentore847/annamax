@@ -3,6 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Professional car service in Austria: repair and maintenance of all car brands. Quality, reliability, and modern technology. Book your appointment today!"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://autoserviceavstia.com" />
+    <meta property="og:title" content="The best auto service in Austria" />
+    <meta
+      property="og:description"
+      content="Professional car service in Austria: repair and maintenance of all car brands. Quality, reliability, and modern technology. Book your appointment today!"
+    />
+    <meta
+      property="og:image"
+      content="https://images.pexels.com/photos/372810/pexels-photo-372810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,7 +32,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>AutoService</title>
+    <title>Austria Auto Service</title>
   </head>
   <body>
     <!-- SVG Sprites START -->
@@ -256,9 +271,9 @@
           Lorem Ipsum is simply dummy text of the <br />
           printing and typesetting industry.
         </h1>
-        <button class="intro_content_button">
-          <a href="#feedback">Записатися на сервіс</a>
-        </button>
+        <a href="#feedback">
+          <button class="intro_content_button">Записатися на сервіс</button>
+        </a>
       </div>
     </div>
 
@@ -448,7 +463,7 @@
                   style="border: 1px solid #000;"
                 />
               </div>
-              <input type="tel" placeholder="+43" value="+43" />
+              <input type="tel" placeholder="+43" value="+43" required />
             </div>
             <div class="form-group">
               <select name="car_make" id="car_make">
@@ -480,28 +495,30 @@
             <div class="modal_form_services">
               <div class="modal_labels">
                 <label>
-                  <input type="checkbox" />
+                  <input id="detailing_input" type="checkbox" />
                   Детейлінг
                 </label>
 
                 <label>
-                  <input type="checkbox" />
+                  <input id="diagnostic_input" type="checkbox" />
                   Діагностика</label
                 >
 
                 <label>
-                  <input type="checkbox" />
+                  <input id="electronics_input" type="checkbox" />
                   Автоелектрика</label
                 >
 
                 <label>
-                  <input type="checkbox" />
+                  <input id="repare_input" type="checkbox" />
                   Ремонт</label
                 >
               </div>
             </div>
-
-            <button class="form_button" type="submit">Розрахувати ціну</button>
+            <p id="result">Total cost from:</p>
+            <button id="calculate_button" class="form_button">
+              Розрахувати ціну
+            </button>
           </form>
         </div>
       </div>
