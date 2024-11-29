@@ -541,6 +541,7 @@ header {
 
 .politics_link {
   color: var(--icon-color);
+  margin-left: 20px;
 }
 
 #result {
@@ -813,6 +814,59 @@ input:focus {
 
 .copyright_text {
   text-align: center;
+}
+
+.politics_block {
+  background: #314a63;
+  height: 100vh;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.politics_block h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.politics_block p {
+  margin: 50px;
+}
+
+.oferta_block {
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.oferta_block p {
+  color: #000;
+  margin: 25px;
+}
+
+.oferta_block h1 {
+  color: #000;
+  text-align: center;
+  margin: 40px;
+}
+
+.oferta_info {
+  padding: 0 100px;
+}
+
+.oferta_info h2 {
+  color: #000;
+}
+
+.oferta_list ul,
+li {
+  color: #000;
+  margin: 0 100px;
+}
+
+.oferta_list li:last-child {
+  margin-bottom: 25px;
 }
 
 /* Media */
