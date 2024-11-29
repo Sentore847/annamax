@@ -1,12 +1,11 @@
-// const customSelect = document.querySelector(".custom-select");
-// const selectedOption = customSelect.querySelector(".selected-option");
-// const options = customSelect.querySelectorAll(".options li");
 const carSelect = document.querySelector("#car_make");
 const modelSelect = document.querySelector("#car_model");
 const carSelectedValue = carSelect.value;
 const cardButtons = document.querySelectorAll(".card_btn");
 const modalWindow = document.getElementById("modal_window");
 const closeModalBtn = document.querySelector(".modal_close_btn");
+const phoneInput = document.getElementById("phone_input");
+const modalForm = document.querySelector(".modal_form");
 
 function resetFormFields() {
   const form = modalWindow.querySelector(".modal_form");
@@ -46,8 +45,60 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-// Selects with Cars
+//Sucess for form
+modalForm.addEventListener("submit", function (e) {
+  e.preventDefault();
 
+  const successMessage = document.createElement("div");
+  successMessage.textContent =
+    "Форма успішно відправлена! Дякуємо за звернення.";
+  successMessage.style.cssText =
+    "color: green; margin-top: 20px; font-size: 24px;";
+
+  const submitButton = document.querySelector(".form_button");
+  submitButton.insertAdjacentElement("beforebegin", successMessage);
+
+  e.target.reset();
+
+  setTimeout(() => closeModal(), 3000);
+});
+
+document
+  .querySelector(".feedback_form")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Заменяем форму на сообщение
+    this.innerHTML =
+      '<div class="thank_you_message"><h3>Ми отримали Ваші дані та зв\'яжемося з Вами на протязі дня!</h3></div>';
+
+    // Через 3 секунды восстанавливаем форму и очищаем поля
+    setTimeout(() => {
+      // Восстановление исходного состояния формы
+      this.innerHTML = `
+      <h3 class="form_title">Заповніть форму для зв’язку!</h3>
+      <div class="form-group">
+        <input type="text" placeholder="Введіть ваше ім’я..." required />
+      </div>
+      <div class="form-group phone-group">
+        <div class="flag-icon">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria.svg" alt="Австрія" width="20" />
+        </div>
+        <input type="tel" placeholder="+43" value="+43" required />
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Введіть назву вашого авто..." required />
+      </div>
+      <label class="politics_label">
+        <input type="checkbox" required />Я приймаю
+        <a class="politics_link">Політику конфіденційності</a>
+      </label>
+      <button class="form_button" type="submit">Отримати консультацію</button>
+    `;
+    }, 3000);
+  });
+
+// Selects with Cars
 carSelect.addEventListener("change", () => {
   const selectedMake = carSelect.value;
   const modelOptions = [];
@@ -319,13 +370,10 @@ const multipliers = {
   Niro: 1.1,
 };
 
-const calculateButton = document.getElementById("calculate_button");
 const resultDisplay = document.getElementById("result");
 const carModelSelect = document.getElementById("car_model");
 
-calculateButton.addEventListener("click", (event) => {
-  event.preventDefault();
-
+function calculateTotal() {
   const selectedModel = carModelSelect.value;
   const multiplier = multipliers[selectedModel] || 1;
 
@@ -344,11 +392,14 @@ calculateButton.addEventListener("click", (event) => {
     total += repare * multiplier;
   }
 
-  resultDisplay.textContent = `Total cost from: $${total.toFixed(2)}`;
+  resultDisplay.textContent = `Total cost from: €${total.toFixed(2)}`;
+}
+
+document.querySelectorAll("input[type='checkbox']").forEach((checkbox) => {
+  checkbox.addEventListener("change", calculateTotal);
 });
 
 //Counter figures
-
 document.addEventListener("DOMContentLoaded", () => {
   const counters = document.querySelectorAll(".counter_item_number");
   const speed = 200;
@@ -386,46 +437,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Input Phone Validate
-const phoneInput = document.getElementById("phone_input");
+// const austriaPhonePattern = /^\+43[0-9]{1,12}$/;
 
-const austriaPhonePattern = /^\+43[0-9]{1,12}$/;
+// function validatePhoneBeforeSubmit(event) {
+//   const phoneValue = phoneInput.value;
 
-function validatePhoneNumber() {
-  const phoneValue = phoneInput.value;
-
-  if (austriaPhonePattern.test(phoneValue)) {
-    phoneInput.style.border = "2px solid green";
-  } else {
-    phoneInput.style.border = "2px solid red";
-  }
-}
-
-// Слушаем изменения в поле
-phoneInput.addEventListener("input", validatePhoneNumber);
-
-// Close lang switcher
-
-// customSelect.addEventListener("click", function () {
-//   this.classList.toggle("open");
-// });
-
-// document.addEventListener("keydown", function (event) {
-//   if (event.key === "Escape") {
-//     customSelect.classList.remove("open");
+//   if (phoneValue === "+43" || !austriaPhonePattern.test(phoneValue)) {
+//     event.preventDefault();
+//     phoneInput.style.border = "2px solid red";
+//     alert("Please write correct phone number");
+//   } else {
+//     phoneInput.style.border = "2px solid green";
 //   }
-// });
+// }
 
-// document.addEventListener("click", function (event) {
-//   if (!customSelect.contains(event.target)) {
-//     customSelect.classList.remove("open");
-//   }
-// });
+// modalForm.addEventListener("submit", validatePhoneBeforeSubmit);
 
-// options.forEach((option) => {
-//   option.addEventListener("click", function () {
-//     selectedOption.innerHTML = this.innerHTML;
-//   });
-//   customSelect.classList.remove("open");
-// });
-
-// Count figures
+// phoneInput.addEventListener("input", validatePhoneNumber);

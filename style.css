@@ -527,7 +527,24 @@ header {
   accent-color: #007bff;
 }
 
+.politics_label {
+  color: #000;
+}
+
+.form_button {
+  margin-top: 10px;
+}
+
+.politics_label input {
+  margin-right: 10px;
+}
+
+.politics_link {
+  color: var(--icon-color);
+}
+
 #result {
+  margin-bottom: 15px;
   color: #000;
 }
 
@@ -740,6 +757,10 @@ input:focus {
   transition: background-color 0.3s;
 }
 
+.thank_you_message h3 {
+  color: green;
+}
+
 /* Footer */
 .footer {
   position: relative;
@@ -841,6 +862,15 @@ input:focus {
 @media screen and (max-width: 1007px) {
   .container {
     max-width: 870px;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .top_header_icon_title {
+    font-size: 14px;
   }
 
   .intro_content_title {
