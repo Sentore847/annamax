@@ -4,7 +4,6 @@ const carSelectedValue = carSelect.value;
 const cardButtons = document.querySelectorAll(".card_btn");
 const modalWindow = document.getElementById("modal_window");
 const closeModalBtn = document.querySelector(".modal_close_btn");
-const phoneInput = document.getElementById("phone_input");
 const modalForm = document.querySelector(".modal_form");
 
 function resetFormFields() {
@@ -44,59 +43,6 @@ document.addEventListener("keydown", (event) => {
     closeModal();
   }
 });
-
-//Sucess for form
-modalForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const successMessage = document.createElement("div");
-  successMessage.textContent =
-    "Форма успішно відправлена! Дякуємо за звернення.";
-  successMessage.style.cssText =
-    "color: green; margin-top: 20px; font-size: 24px;";
-
-  const submitButton = document.querySelector(".form_button");
-  submitButton.insertAdjacentElement("beforebegin", successMessage);
-
-  e.target.reset();
-
-  setTimeout(() => closeModal(), 3000);
-});
-
-document
-  .querySelector(".feedback_form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    // Заменяем форму на сообщение
-    this.innerHTML =
-      '<div class="thank_you_message"><h3>Ми отримали Ваші дані та зв\'яжемося з Вами на протязі дня!</h3></div>';
-
-    // Через 3 секунды восстанавливаем форму и очищаем поля
-    setTimeout(() => {
-      // Восстановление исходного состояния формы
-      this.innerHTML = `
-      <h3 class="form_title">Заповніть форму для зв’язку!</h3>
-      <div class="form-group">
-        <input type="text" placeholder="Введіть ваше ім’я..." required />
-      </div>
-      <div class="form-group phone-group">
-        <div class="flag-icon">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria.svg" alt="Австрія" width="20" />
-        </div>
-        <input type="tel" placeholder="+43" value="+43" required />
-      </div>
-      <div class="form-group">
-        <input type="text" placeholder="Введіть назву вашого авто..." required />
-      </div>
-      <label class="politics_label">
-        <input type="checkbox" required />Я приймаю
-        <a class="politics_link">Політику конфіденційності</a>
-      </label>
-      <button class="form_button" type="submit">Отримати консультацію</button>
-    `;
-    }, 3000);
-  });
 
 // Selects with Cars
 carSelect.addEventListener("change", () => {
@@ -399,6 +345,29 @@ document.querySelectorAll("input[type='checkbox']").forEach((checkbox) => {
   checkbox.addEventListener("change", calculateTotal);
 });
 
+//Sucess for form
+modalForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Показываем сообщение Toastify
+  Toastify({
+    text: "Форма успішно відправлена! Дякуємо за звернення.",
+    duration: 3000, // 3 секунды
+    close: true, // Добавляем кнопку закрытия
+    gravity: "top", // Позиция сверху
+    position: "center", // По центру
+    backgroundColor: "#4CAF50", // Зеленый цвет для успешного сообщения
+  }).showToast();
+
+  resultDisplay.textContent = "Total cost from: €0.00";
+
+  // Очищаем все поля формы
+  e.target.reset();
+
+  // Закрываем модалку через 3 секунды
+  setTimeout(() => closeModal());
+});
+
 //Counter figures
 document.addEventListener("DOMContentLoaded", () => {
   const counters = document.querySelectorAll(".counter_item_number");
@@ -437,20 +406,89 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Input Phone Validate
-// const austriaPhonePattern = /^\+43[0-9]{1,12}$/;
+const phoneInputs = document.querySelectorAll(".input_phone");
+const itiInstances = [];
 
-// function validatePhoneBeforeSubmit(event) {
-//   const phoneValue = phoneInput.value;
+// Инициализация полей для intlTelInput
+phoneInputs.forEach((input) => {
+  const iti = window.intlTelInput(input, {
+    initialCountry: "at", // Инициализация с кодом страны
+    geoIpLookup: (callback) => {
+      fetch("https://ipinfo.io/json?token=your_token_here")
+        .then((response) => response.json())
+        .then((data) => callback(data.country))
+        .catch(() => callback("us"));
+    },
+    utilsScript:
+      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+  });
 
-//   if (phoneValue === "+43" || !austriaPhonePattern.test(phoneValue)) {
-//     event.preventDefault();
-//     phoneInput.style.border = "2px solid red";
-//     alert("Please write correct phone number");
-//   } else {
-//     phoneInput.style.border = "2px solid green";
-//   }
-// }
+  itiInstances.push({ input, iti }); // Добавляем экземпляр в массив
+});
 
-// modalForm.addEventListener("submit", validatePhoneBeforeSubmit);
+// Обработчик отправки формы
+const feedbackForm = document.querySelector(".feedback_form");
 
-// phoneInput.addEventListener("input", validatePhoneNumber);
+feedbackForm.addEventListener("submit", (e) => {
+  e.preventDefault(); // Отмена стандартного поведения
+
+  // Получение значений полей
+  const name = feedbackForm
+    .querySelector('input[placeholder="Введіть ваше ім’я..."]')
+    .value.trim();
+  const phoneInput = feedbackForm.querySelector(".input_phone");
+  const car = feedbackForm
+    .querySelector('input[placeholder="Введіть назву вашого авто..."]')
+    .value.trim();
+  const acceptPolitics = feedbackForm.querySelector(
+    'input[type="checkbox"]'
+  ).checked;
+
+  // Получаем экземпляр intlTelInput для поля телефона
+  const iti = itiInstances.find(({ input }) => input === phoneInput)?.iti;
+
+  // Проверка валидности телефона
+  const isPhoneValid = iti && iti.isValidNumber();
+
+  // Проверка всех условий
+  if (
+    !name ||
+    !phoneInput.value.trim() ||
+    !car ||
+    !acceptPolitics ||
+    !isPhoneValid
+  ) {
+    let errorMessage =
+      "Будь ласка, заповніть всі поля і прийміть політику конфіденційності!";
+    if (!isPhoneValid) {
+      errorMessage = "Будь ласка, введіть дійсний номер телефону!";
+      phoneInput.style.border = "2px solid red";
+    } else {
+      phoneInput.style.border = ""; // Убираем ошибку, если телефон валиден
+    }
+
+    Toastify({
+      text: errorMessage,
+      duration: 3000,
+      close: true,
+      gravity: "top", // top or bottom
+      position: "center", // left, center or right
+      backgroundColor: "#FF6347",
+    }).showToast();
+    return;
+  }
+
+  // Данные прошли проверку
+  Toastify({
+    text: "Дані успішно відправлені!",
+    duration: 3000,
+    close: true,
+    gravity: "top",
+    position: "center",
+    backgroundColor: "#4CAF50",
+  }).showToast();
+
+  // Очистка формы после отправки
+  feedbackForm.reset();
+  phoneInput.style.border = ""; // Убираем стиль ошибки при сбросе формы
+});

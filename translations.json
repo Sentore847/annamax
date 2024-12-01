@@ -1,0 +1,14 @@
+{
+  "en": {
+    "greeting": "Hello",
+    "welcome": "Welcome to our website!"
+  },
+  "de": {
+    "greeting": "Hallo",
+    "welcome": "Willkommen auf unserer Website!"
+  },
+  "ua": {
+    "greeting": "Привіт",
+    "welcome": "Ласкаво просимо на наш сайт!"
+  }
+}

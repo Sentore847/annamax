@@ -18,7 +18,7 @@
       property="og:image"
       content="https://images.pexels.com/photos/372810/pexels-photo-372810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     />
-    <link rel="stylesheet" href="style.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -36,7 +36,15 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Austria Auto Service</title>
   </head>
   <body>
@@ -506,19 +514,12 @@
               <input type="text" placeholder="Введіть ваше ім’я..." required />
             </div>
             <div class="form-group phone-group">
-              <div class="flag-icon">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria.svg"
-                  alt="Австрія"
-                  width="20"
-                  style="border: 1px solid #000;"
-                />
-              </div>
               <input
+                class="input_phone"
                 type="tel"
-                class="phone_input"
-                placeholder="+43"
                 value="+43"
+                class="phone_input"
+                placeholder="Enter your phone number"
                 required
               />
             </div>
@@ -648,15 +649,15 @@
 
           <div class="review_counter">
             <div class="counter_item">
-              <h2 class="counter_item_number" data-count="3333">0</h2>
+              <h2 class="counter_item_number" data-count="7514">0</h2>
               <p class="counter_item_text">Реалізованих проектів</p>
             </div>
             <div class="counter_item">
-              <h2 class="counter_item_number" data-count="222">0</h2>
+              <h2 class="counter_item_number" data-count="1030">0</h2>
               <p class="counter_item_text">Кількість поліровок</p>
             </div>
             <div class="counter_item">
-              <h2 class="counter_item_number" data-count="1111">0</h2>
+              <h2 class="counter_item_number" data-count="235">0</h2>
               <p class="counter_item_text">Кількість хімчисток</p>
             </div>
             <div class="counter_item">
@@ -699,18 +700,11 @@
                 />
               </div>
               <div class="form-group phone-group">
-                <!-- <div class="flag-icon">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria.svg"
-                    alt="Австрія"
-                    width="20"
-                  />
-                </div> -->
                 <input
+                  class="input_phone"
                   type="tel"
-                  class="phone_input"
-                  placeholder="+43"
                   value="+43"
+                  placeholder="Enter your phone number"
                   required
                 />
               </div>
@@ -835,7 +829,8 @@
       </p>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="slider.js"></script>
     <script src="script.js"></script>
