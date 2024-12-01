@@ -40,10 +40,58 @@ svg {
   margin: 0 auto;
 }
 
+/* Burger */
+.burger-menu {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.burger-icon {
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.burger-icon span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.burger-nav {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  border-radius: 5px;
+}
+
+.burger-nav a {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.burger-nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
 /* HEADER */
 header {
   position: relative;
-  /* height: 160px; */
   z-index: 4;
 }
 
@@ -549,6 +597,11 @@ header {
   accent-color: #007bff;
 }
 
+#car_make,
+#car_model {
+  padding: 10px;
+}
+
 .politics_label {
   color: #000;
 }
@@ -651,22 +704,23 @@ header {
 /* Feedback */
 
 .feedback {
+  background: url();
   position: relative;
   padding: 300px 0;
   z-index: 3;
 }
 
 .feedback_video_container {
-  position: fixed;
+  position: absolute; /* Абсолютне позиціювання, щоб відео було фоном */
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  z-index: -1;
+  width: 100%; /* Ширина на 100% */
+  height: 100%; /* Висота на 100% */
+  z-index: -1; /* Відео знаходиться позаду контенту */
+  overflow: hidden; /* Сховати все, що виходить за межі контейнера */
 }
 
-.feedback_video_container::after {
+/* .feedback_video_container::after {
   content: "";
   position: absolute;
   top: 0;
@@ -674,16 +728,12 @@ header {
   background-color: #1c2b39;
   opacity: 0.8;
   z-index: 1;
-}
+} */
 
 .feedback_video_container video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
+  width: 100%; /* Ширина відео на 100% від контейнера */
+  height: 100%; /* Висота відео на 100% від контейнера */
+  object-fit: cover; /* Відео покриває контейнер без спотворень */
 }
 
 .feedback_content {
@@ -794,9 +844,9 @@ input:focus {
 /* Works */
 .works {
   position: relative;
-  height: 100vh;
   padding: 100px 0;
-  background: url(img/worksbg.jpg);
+  background: url(img/worksbg.jpg) no-repeat;
+  background-size: cover;
   z-index: 4;
 }
 
@@ -831,6 +881,12 @@ input:focus {
 .swiper {
   width: 600px;
   height: 400px;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .swiper-button-prev::after,
@@ -1027,6 +1083,16 @@ input:focus {
   }
 }
 
+@media screen and (max-width: 900px) {
+  .feedback_form {
+    width: 400px;
+  }
+  #car_make,
+  #car_model {
+    padding: 10px;
+  }
+}
+
 @media screen and (max-width: 870px) {
   .container {
     max-width: 640px;
@@ -1115,6 +1181,19 @@ input:focus {
   }
 }
 
+@media screen and (max-width: 680px) {
+  header {
+    display: none;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+  .feedback_form {
+    width: 300px;
+  }
+}
+
 @media screen and (max-width: 640px) {
   .container {
     max-width: 550px;
@@ -1139,8 +1218,13 @@ input:focus {
   }
 
   .form_button {
-    padding: 6px 10px;
+    margin-top: 20px;
+    padding: 20px;
     font-size: 12px;
+  }
+
+  .modal_politics_block label {
+    font-size: 14px;
   }
 
   .shedule_title {
@@ -1152,7 +1236,7 @@ input:focus {
   }
 
   .counter_item_number {
-    font-size: 24px;
+    font-size: 32px;
   }
 
   .counter_item_text {
@@ -1162,17 +1246,30 @@ input:focus {
   .top_header_icon_text {
     margin-right: 20px;
   }
-}
-
-@media screen and (max-width: 640px) {
   .top_header {
     display: none;
+  }
+
+  .swiper {
+    width: 500px;
+    height: 300px;
+  }
+
+  .swiper-slide img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
   }
 }
 
 @media screen and (max-width: 552px) {
   .container {
     max-width: 400px;
+  }
+
+  .form_button {
+    margin-top: 20px;
+    padding: 20px;
   }
 
   .footer_address_title {
@@ -1222,5 +1319,68 @@ input:focus {
 
   .review_counter {
     margin-top: 50px;
+  }
+
+  .swiper {
+    width: 400px;
+    height: 300px;
+  }
+
+  .swiper-slide img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .feedback_form {
+    width: 200px;
+  }
+
+  .feedback_form h3 {
+    font-size: 10px;
+  }
+
+  .politics_label {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .container {
+    max-width: 370px;
+  }
+
+  .card_btn {
+    padding: 20px 60px;
+    margin-top: 80px;
+  }
+
+  .review_counter {
+    gap: 0;
+  }
+
+  .feedback_content {
+    flex-direction: column;
+  }
+
+  .swiper {
+    width: 350px;
+    height: 200px;
+  }
+}
+
+@media (hover: hover) {
+  .intro_content_button:hover {
+    background-color: var(--primary-color);
+    color: var(--button-color);
+  }
+}
+
+@media (hover: none) {
+  .intro_content_button {
+    background-color: var(--button-color);
+    color: var(--primary-color);
   }
 }

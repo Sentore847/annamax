@@ -2,7 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      user-scalable="no"
+    />
     <meta
       name="description"
       content="Professional car service in Austria: repair and maintenance of all car brands. Quality, reliability, and modern technology. Book your appointment today!"
@@ -314,6 +318,20 @@
         </div>
       </div>
     </header>
+    <div class="burger-menu">
+      <div class="burger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="burger-nav" id="burgerNav">
+        <a href="#top_header" class="header_nav_link">Головна</a>
+        <a href="#about" class="header_nav_link">Про нас</a>
+        <a href="#services" class="header_nav_link">Наші послуги</a>
+        <a href="#clients" class="header_nav_link">Відгуки</a>
+        <a href="#footer" class="header_nav_link">Контакти</a>
+      </nav>
+    </div>
 
     <!-- Intro -->
     <div class="intro" id="intro">
@@ -573,13 +591,15 @@
                 >
               </div>
             </div>
-            <p id="result">Total cost from:</p>
-            <label class="politics_label"
-              ><input type="checkbox" required />Я приймаю
-              <a href="politics.html" class="politics_link"
-                >Політику конфіденційності</a
-              ></label
-            >
+            <p id="result">Total cost from: €0.00</p>
+            <div class="modal_politics_block">
+              <label class="politics_label"
+                ><input type="checkbox" required />Я приймаю
+                <a href="politics.html" class="politics_link"
+                  >Політику конфіденційності</a
+                ></label
+              >
+            </div>
 
             <button class="form_button" type="submit">
               Записатися на сервіс
@@ -739,7 +759,12 @@
             <div class="swiper-wrapper">
               <!-- Каждый слайд должен иметь класс swiper-slide -->
               <div class="swiper-slide">
-                <img src="img/work1.jpg" alt="work" />
+                <img
+                  src="img/work1.jpg"
+                  srcset="img/work1-500x300.jpg 500w, img/work1.jpg 1200w"
+                  sizes="(max-width: 640px) 500px, 100vw"
+                  alt="work"
+                />
               </div>
               <div class="swiper-slide">
                 <img src="img/work2.jpg" alt="work" />

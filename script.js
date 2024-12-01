@@ -346,27 +346,27 @@ document.querySelectorAll("input[type='checkbox']").forEach((checkbox) => {
 });
 
 //Sucess for form
-modalForm.addEventListener("submit", function (e) {
-  e.preventDefault();
+// modalForm.addEventListener("submit", function (e) {
+//   e.preventDefault();
 
-  // Показываем сообщение Toastify
-  Toastify({
-    text: "Форма успішно відправлена! Дякуємо за звернення.",
-    duration: 3000, // 3 секунды
-    close: true, // Добавляем кнопку закрытия
-    gravity: "top", // Позиция сверху
-    position: "center", // По центру
-    backgroundColor: "#4CAF50", // Зеленый цвет для успешного сообщения
-  }).showToast();
+//   // Показываем сообщение Toastify
+//   Toastify({
+//     text: "Форма успішно відправлена! Дякуємо за звернення.",
+//     duration: 3000, // 3 секунды
+//     close: true, // Добавляем кнопку закрытия
+//     gravity: "top", // Позиция сверху
+//     position: "center", // По центру
+//     backgroundColor: "#4CAF50", // Зеленый цвет для успешного сообщения
+//   }).showToast();
 
-  resultDisplay.textContent = "Total cost from: €0.00";
+//   resultDisplay.textContent = "Total cost from: €0.00";
 
-  // Очищаем все поля формы
-  e.target.reset();
+//   // Очищаем все поля формы
+//   e.target.reset();
 
-  // Закрываем модалку через 3 секунды
-  setTimeout(() => closeModal());
-});
+//   // Закрываем модалку через 3 секунды
+//   setTimeout(() => closeModal());
+// });
 
 //Counter figures
 document.addEventListener("DOMContentLoaded", () => {
@@ -492,3 +492,72 @@ feedbackForm.addEventListener("submit", (e) => {
   feedbackForm.reset();
   phoneInput.style.border = ""; // Убираем стиль ошибки при сбросе формы
 });
+
+modalForm.addEventListener("submit", (e) => {
+  e.preventDefault(); // Отмена стандартного поведения
+
+  // Получение значений полей
+  const name = modalForm
+    .querySelector('input[placeholder="Введіть ваше ім’я..."]')
+    .value.trim();
+  const phoneInput = modalForm.querySelector(".input_phone");
+  const carMake = modalForm.querySelector("#car_make").value;
+  const acceptPolitics = modalForm.querySelector(
+    'input[type="checkbox"][required]'
+  ).checked;
+
+  // Получаем экземпляр intlTelInput для поля телефона
+  const iti = itiInstances.find(({ input }) => input === phoneInput)?.iti;
+
+  // Проверка валидности телефона
+  const isPhoneValid = iti && iti.isValidNumber();
+
+  // Проверка всех условий
+  if (
+    !name ||
+    !phoneInput.value.trim() ||
+    !carMake ||
+    !acceptPolitics ||
+    !isPhoneValid
+  ) {
+    let errorMessage =
+      "Будь ласка, заповніть всі поля і прийміть політику конфіденційності!";
+    if (!isPhoneValid) {
+      errorMessage = "Будь ласка, введіть дійсний номер телефону!";
+      phoneInput.style.border = "2px solid red";
+    } else {
+      phoneInput.style.border = ""; // Убираем ошибку, если телефон валиден
+    }
+
+    Toastify({
+      text: errorMessage,
+      duration: 3000,
+      close: true,
+      gravity: "top",
+      position: "center",
+      backgroundColor: "#FF6347",
+    }).showToast();
+    return; // Остановка выполнения
+  }
+
+  // Данные прошли проверку
+  phoneInput.style.border = ""; // Убираем стиль ошибки при сбросе формы
+
+  Toastify({
+    text: "Форма успішно відправлена! Дякуємо за звернення.",
+    duration: 3000,
+    close: true,
+    gravity: "top",
+    position: "center",
+    backgroundColor: "#4CAF50",
+  }).showToast();
+
+  // Очистка формы
+  modalForm.reset();
+  closeModal();
+});
+
+function toggleMenu() {
+  const nav = document.getElementById("burgerNav");
+  nav.style.display = nav.style.display === "block" ? "none" : "block";
+}
