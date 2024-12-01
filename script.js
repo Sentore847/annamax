@@ -260,10 +260,10 @@ carSelect.addEventListener("change", () => {
 });
 
 // CALCULATOR
-const detailing = 100;
-const diagnostic = 200;
-const electronicDiagnostic = 500;
-const repare = 1000;
+const detailing = 15;
+const diagnostic = 15;
+const electronicDiagnostic = 15;
+const repare = 15;
 
 const multipliers = {
   Corolla: 1,

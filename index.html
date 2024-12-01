@@ -32,6 +32,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.min.css"
+    />
     <title>Austria Auto Service</title>
   </head>
   <body>
@@ -244,7 +252,7 @@
                   href="https://www.viber.com/ru/download/"
                   class="top_header_icon_subtitle"
                   target="_blank"
-                  >+431234567</a
+                  >Contact</a
                 >
               </div>
             </span>
@@ -291,6 +299,13 @@
             <a href="#clients" class="header_nav_link">Відгуки</a>
             <a href="#footer" class="header_nav_link">Контакти</a>
           </nav>
+        </div>
+        <div class="lang_switcher">
+          <select id="lang_select">
+            <option value="en" data-flag="🇬🇧">English</option>
+            <option value="de" data-flag="🇩🇪">Deutsch</option>
+            <option value="ua" data-flag="🇺🇦">Українська</option>
+          </select>
         </div>
       </div>
     </header>
@@ -504,7 +519,7 @@
               </div>
               <input
                 type="tel"
-                id="phone_input"
+                class="phone_input"
                 placeholder="+43"
                 value="+43"
                 required
@@ -687,14 +702,20 @@
                 />
               </div>
               <div class="form-group phone-group">
-                <div class="flag-icon">
+                <!-- <div class="flag-icon">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria.svg"
                     alt="Австрія"
                     width="20"
                   />
-                </div>
-                <input type="tel" placeholder="+43" value="+43" required />
+                </div> -->
+                <input
+                  type="tel"
+                  class="phone_input"
+                  placeholder="+43"
+                  value="+43"
+                  required
+                />
               </div>
               <div class="form-group">
                 <input
@@ -713,6 +734,43 @@
                 Отримати консультацію
               </button>
             </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="works">
+      <div class="container">
+        <div class="works_content">
+          <h2 class="works_title">Наші Роботи</h2>
+          <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Каждый слайд должен иметь класс swiper-slide -->
+              <div class="swiper-slide">
+                <img src="img/work1.jpg" alt="work" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/work2.jpg" alt="work" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/work3.jpg" alt="work" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/work4.jpg" alt="work" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/work5.jpg" alt="work" />
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <!-- <div class="swiper-pagination"></div> -->
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <!-- <div class="swiper-scrollbar"></div> -->
           </div>
         </div>
       </div>
@@ -780,6 +838,9 @@
       </p>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="slider.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
