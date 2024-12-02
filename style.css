@@ -711,29 +711,19 @@ header {
 }
 
 .feedback_video_container {
-  position: absolute; /* Абсолютне позиціювання, щоб відео було фоном */
-  top: 0;
-  left: 0;
-  width: 100%; /* Ширина на 100% */
-  height: 100%; /* Висота на 100% */
-  z-index: -1; /* Відео знаходиться позаду контенту */
-  overflow: hidden; /* Сховати все, що виходить за межі контейнера */
-}
-
-/* .feedback_video_container::after {
-  content: "";
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #1c2b39;
-  opacity: 0.8;
-  z-index: 1;
-} */
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
 
 .feedback_video_container video {
-  width: 100%; /* Ширина відео на 100% від контейнера */
-  height: 100%; /* Висота відео на 100% від контейнера */
-  object-fit: cover; /* Відео покриває контейнер без спотворень */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .feedback_content {
@@ -742,6 +732,19 @@ header {
   justify-content: center;
   align-items: center;
   gap: 100px;
+}
+
+.feedback_name_label {
+  position: relative;
+}
+
+.feedback_name_label span {
+  position: absolute;
+  top: 10%;
+  left: 3%;
+  color: #000;
+  opacity: 0.4;
+  z-index: -1;
 }
 
 .feedback_shedule {
@@ -887,6 +890,12 @@ input:focus {
   width: 100%;
   height: auto;
   object-fit: cover;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .swiper-button-prev::after,

@@ -6,6 +6,46 @@ const modalWindow = document.getElementById("modal_window");
 const closeModalBtn = document.querySelector(".modal_close_btn");
 const modalForm = document.querySelector(".modal_form");
 
+const allLangs = ["ua", "en", "de"];
+let currentLang = "en"; // Установим язык по умолчанию
+
+const someObj = {
+  intro: {
+    ua: "Текст українською",
+    en: "Text in English",
+    de: "Text auf Deutsch",
+  },
+  feedback: {
+    ua: "Введіть ваше ім'я...",
+    en: "Enter your name...",
+    de: "Text auf Deutsch",
+  },
+};
+
+// Функция обновления перевода
+function updateTranslation() {
+  // Получаем выбранный язык из выпадающего списка
+  const langSelect = document.getElementById("lang_select");
+  currentLang = langSelect.value; // Обновляем текущий язык
+
+  // Находим элемент для перевода и обновляем его содержимое
+  const introTitle = document.getElementById("intro_title");
+  introTitle.textContent =
+    someObj.intro[currentLang] || "Translation not available";
+
+  const feedbackNameInput = document.getElementById("feedback_name_input");
+  feedbackNameInput.placeholder =
+    someObj.feedback[currentLang] || "Translation not available";
+}
+
+// Добавляем слушатель событий на изменение языка
+document
+  .getElementById("lang_select")
+  .addEventListener("change", updateTranslation);
+
+// Инициализируем отображение на языке по умолчанию
+updateTranslation();
+
 function resetFormFields() {
   const form = modalWindow.querySelector(".modal_form");
   form.reset();
@@ -433,9 +473,7 @@ feedbackForm.addEventListener("submit", (e) => {
   e.preventDefault(); // Отмена стандартного поведения
 
   // Получение значений полей
-  const name = feedbackForm
-    .querySelector('input[placeholder="Введіть ваше ім’я..."]')
-    .value.trim();
+  const name = feedbackForm.querySelector('input[name="name"]').value.trim();
   const phoneInput = feedbackForm.querySelector(".input_phone");
   const car = feedbackForm
     .querySelector('input[placeholder="Введіть назву вашого авто..."]')

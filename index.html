@@ -232,7 +232,9 @@
                   target="_blank"
                 >
                   <h4 class="top_header_icon_title">вул. Глибочицька, 101</h4>
-                  <p class="top_header_icon_subtitle">Київ, Україна</p>
+                  <p class="top_header_icon_subtitle" >
+                    Київ, Україна
+                  </p>
                 </a>
               </div>
             </span>
@@ -242,7 +244,9 @@
                 <use xlink:href="#mail"></use>
               </svg>
               <div class="top_header_icon_text">
-                <h4 class="top_header_icon_title">Ел. пошта</h4>
+                <h4 class="top_header_icon_title" >
+                  Ел. пошта
+                </h4>
                 <a
                   href="mailto:autoservice@gmail.com"
                   class="top_header_icon_subtitle"
@@ -261,6 +265,7 @@
                   href="https://www.viber.com/ru/download/"
                   class="top_header_icon_subtitle"
                   target="_blank"
+                
                   >Contact</a
                 >
               </div>
@@ -276,6 +281,7 @@
                   href="https://t.me/idgrigodev"
                   class="top_header_icon_subtitle"
                   target="_blank"
+                  
                   >Contact</a
                 >
               </div>
@@ -302,22 +308,36 @@
         <div class="header_logo"></div>
         <div class="header_nav">
           <nav>
-            <a href="#top_header" class="header_nav_link">Головна</a>
-            <a href="#about" class="header_nav_link">Про нас</a>
-            <a href="#services" class="header_nav_link">Наші послуги</a>
-            <a href="#clients" class="header_nav_link">Відгуки</a>
-            <a href="#footer" class="header_nav_link">Контакти</a>
+            <a href="#top_header" class="header_nav_link" 
+              >Головна</a
+            >
+            <a href="#about" class="header_nav_link" 
+              >Про нас</a
+            >
+            <a
+              href="#services"
+              class="header_nav_link"
+             
+              >Наші послуги</a
+            >
+            <a href="#clients" class="header_nav_link" 
+              >Відгуки</a
+            >
+            <a href="#footer" class="header_nav_link" 
+              >Контакти</a
+            >
           </nav>
         </div>
         <div class="lang_switcher">
           <select id="lang_select">
             <option value="en">English</option>
             <option value="de">Deutsch</option>
-            <option value="ua">Українська</option>
+            <option value="uk">Українська</option>
           </select>
         </div>
       </div>
     </header>
+    <!-- Burger -->
     <div class="burger-menu">
       <div class="burger-icon" onclick="toggleMenu()">
         <span></span>
@@ -325,11 +345,21 @@
         <span></span>
       </div>
       <nav class="burger-nav" id="burgerNav">
-        <a href="#top_header" class="header_nav_link">Головна</a>
-        <a href="#about" class="header_nav_link">Про нас</a>
-        <a href="#services" class="header_nav_link">Наші послуги</a>
-        <a href="#clients" class="header_nav_link">Відгуки</a>
-        <a href="#footer" class="header_nav_link">Контакти</a>
+        <a href="#top_header" class="header_nav_link" headerMain"
+          >Головна</a
+        >
+        <a href="#about" class="header_nav_link" headerAbout"
+          >Про нас</a
+        >
+        <a href="#services" class="header_nav_link" headerServices"
+          >Наші послуги</a
+        >
+        <a href="#clients" class="header_nav_link" headerReviews"
+          >Відгуки</a
+        >
+        <a href="#footer" class="header_nav_link" headerContact"
+          >Контакти</a
+        >
       </nav>
     </div>
 
@@ -344,12 +374,13 @@
       </div>
 
       <div class="intro_content">
-        <h1 class="intro_content_title">
-          Lorem Ipsum is simply dummy text of the <br />
-          printing and typesetting industry.
+        <h1 class="intro_content_title" id="intro_title">
+          Цей заголовок написаний Українською
         </h1>
         <a href="#feedback">
-          <button class="intro_content_button">Записатися на сервіс</button>
+          <button class="intro_content_button" >
+            Записатися на сервіс
+          </button>
         </a>
       </div>
     </div>
@@ -358,7 +389,7 @@
     <div class="about" id="about">
       <div class="container">
         <div class="about_content">
-          <h2 class="about_title">Про Нас</h2>
+          <h2 class="about_title" >Про Нас</h2>
 
           <div class="about_info">
             <div class="about_image">
@@ -366,7 +397,7 @@
             </div>
 
             <div class="about_text">
-              <p>
+              <p >
                 Детейлінг центр “Luxusautocare” - лідер у сфері ремонтних та
                 детейлінгових послуг для вашого авто. Наші професіонали надають
                 детальну консультацію по догляду за автомобілем та усунення
@@ -374,7 +405,7 @@
                 підтримувати технічну та візуальну складову авто наших клієнтів
                 у відмінному стані не тільки зовнішньо, але й внутрішньо.
               </p>
-              <p>
+              <p >
                 Чому обирають саме нашу студію? Ми віримо в якісний догляд за
                 вашим авто! Захоплення автомобілями для нас — це не просто
                 робота, а справжня пристрасть, тому ми досконало знаємо, як
@@ -390,7 +421,7 @@
           <div class="about_figures">
             <span class="figure_item">
               <p class="figure">1</p>
-              <span class="figure_text"
+              <span class="figure_text" 
                 >Кваліфіковані спеціалісти завжди готові надати якісні послуги
                 нашим клієнтам з гарантією</span
               >
@@ -398,17 +429,17 @@
 
             <span class="figure_item">
               <p class="figure">2</p>
-              <span class="figure_text"
-                >Кваліфіковані спеціалісти завжди готові надати якісні послуги
-                нашим клієнтам з гарантією</span
+              <span class="figure_text" 
+                >Кожного дня в нас працює контакт-центр для консультації та
+                записів наших клієнтів</span
               >
             </span>
 
             <span class="figure_item">
               <p class="figure">3</p>
-              <span class="figure_text"
-                >Кваліфіковані спеціалісти завжди готові надати якісні послуги
-                нашим клієнтам з гарантією</span
+              <span class="figure_text" 
+                >Ми прагнемо оптимізувати процес покращення Вашого авто і надати
+                послуги високоякісно та швидко</span
               >
             </span>
           </div>
@@ -419,7 +450,7 @@
     <!-- Services -->
     <div class="services" id="services">
       <div class="container">
-        <h2 class="services_title">Наші Послуги</h2>
+        <h2 class="services_title" >Наші Послуги</h2>
         <div class="services_cards">
           <div class="sevices_card_item">
             <div class="card_img_block">
@@ -430,23 +461,25 @@
               />
             </div>
 
-            <h3 class="card_title">Детейлінг</h3>
+            <h3 class="card_title" >Детейлінг</h3>
             <ul class="service_card_list">
-              <li>
+              <li >
                 Глибоке очищення салону від пилу та бруду за допомогою
                 спеціалізованих засобів.
               </li>
-              <li>
+              <li >
                 Захист і реставрація шкіряних та тканинних сидінь, а також інших
                 поверхонь.
               </li>
-              <li>
+              <li >
                 Усунення неприємних запахів і дезінфекція для створення
                 комфортної атмосфери.
               </li>
             </ul>
             <div class="card_button_block">
-              <button class="card_btn">Детальніше</button>
+              <button class="card_btn" >
+                Детальніше
+              </button>
             </div>
           </div>
 
@@ -458,19 +491,23 @@
                 alt="diagnostic"
               />
             </div>
-            <h3 class="card_title">Діагностика</h3>
+            <h3 class="card_title" >Діагностика</h3>
             <ul class="service_card_list">
-              <li>Комп'ютерна діагностика електронних систем автомобіля.</li>
-              <li>
+              <li >
+                Комп'ютерна діагностика електронних систем автомобіля.
+              </li>
+              <li >
                 Перевірка роботи двигуна, трансмісії та інших ключових систем.
               </li>
-              <li>
+              <li >
                 Визначення можливих несправностей та рекомендації щодо їх
                 усунення.
               </li>
             </ul>
             <div class="card_button_block">
-              <button class="card_btn">Детальніше</button>
+              <button class="card_btn" >
+                Детальніше
+              </button>
             </div>
           </div>
 
@@ -480,44 +517,50 @@
               src="img/electronics128.png"
               alt="electronics"
             />
-            <h3 class="card_title">Автоелектрика</h3>
+            <h3 class="card_title" >
+              Автоелектрика
+            </h3>
             <ul class="service_card_list">
-              <li>
+              <li >
                 Ремонт та заміна електричних компонентів автомобіля
                 (акумулятори, стартери, генератори).
               </li>
-              <li>
+              <li >
                 Виправлення проблем з освітленням, проводкою та електронними
                 системами.
               </li>
-              <li>
+              <li >
                 Встановлення додаткових електронних пристроїв (сигналізацій,
                 парктроніків, мультимедійних систем).
               </li>
             </ul>
             <div class="card_button_block">
-              <button class="card_btn">Детальніше</button>
+              <button class="card_btn" >
+                Детальніше
+              </button>
             </div>
           </div>
 
           <div class="sevices_card_item">
             <img class="card_image" src="img/repare128.png" alt="repare" />
-            <h3 class="card_title">Ремонт</h3>
+            <h3 class="card_title" >Ремонт</h3>
             <ul class="service_card_list">
-              <li>
+              <li >
                 Усі види ремонтних робіт по двигуну, трансмісії та ходовій
                 частині.
               </li>
-              <li>
+              <li >
                 Замінa деталей та агрегатів (гальмівні системи, підвіска,
                 зчеплення).
               </li>
-              <li>
+              <li >
                 Виправлення кузовних пошкоджень та лакофарбових покриттів.
               </li>
             </ul>
             <div class="card_button_block">
-              <button class="card_btn">Детальніше</button>
+              <button class="card_btn" >
+                Детальніше
+              </button>
             </div>
           </div>
         </div>
@@ -537,13 +580,12 @@
                 type="tel"
                 value="+43"
                 class="phone_input"
-                placeholder="Enter your phone number"
                 required
               />
             </div>
             <div class="form-group">
               <select name="car_make" id="car_make">
-                <option value="" disabled selected>
+                <option value="" disabled selected >
                   Оберіть марку авто...
                 </option>
                 <option value="toyota">Toyota</option>
@@ -561,41 +603,47 @@
 
             <div class="form-group" id="model_select">
               <select name="car_model" id="car_model">
-                <option value="" disabled selected>
+                <option value="" disabled selected >
                   Спочатку оберіть марку авто!
                 </option>
               </select>
             </div>
 
-            <h3 class="modal_form_title">Послуги:</h3>
+            <h3 class="modal_form_title" >
+              Послуги:
+            </h3>
             <div class="modal_form_services">
               <div class="modal_labels">
-                <label>
+                <label for="detailing_input">
                   <input id="detailing_input" type="checkbox" />
-                  Детейлінг
+                  <span >Детейлінг</span>
                 </label>
 
-                <label>
+                <label for="diagnostic_input">
                   <input id="diagnostic_input" type="checkbox" />
-                  Діагностика</label
-                >
+                  <span >Діагностика</span>
+                </label>
 
-                <label>
+                <label for="electronics_input">
                   <input id="electronics_input" type="checkbox" />
-                  Автоелектрика</label
-                >
+                  <span >Автоелектрика</span>
+                </label>
 
-                <label>
+                <label for="repare_input">
                   <input id="repare_input" type="checkbox" />
-                  Ремонт</label
-                >
+                  <span >Ремонт</span>
+                </label>
               </div>
             </div>
-            <p id="result">Total cost from: €0.00</p>
+            <p id="result" >Сума від: €0.00</p>
             <div class="modal_politics_block">
               <label class="politics_label"
-                ><input type="checkbox" required />Я приймаю
-                <a href="politics.html" class="politics_link"
+                ><input type="checkbox" required />
+                <span >Я приймаю</span>
+                <a
+                  href="politics.html"
+                  class="politics_link"
+              
                   >Політику конфіденційності</a
                 ></label
               >
@@ -613,7 +661,7 @@
     <div class="clients" id="clients">
       <div class="container">
         <div class="clients_content">
-          <h2 class="clients_title">Наші Клієнти</h2>
+          <h2 class="clients_title" clientsTitle">Наші Клієнти</h2>
           <div class="reviews">
             <div class="review_item">
               <img
@@ -670,19 +718,27 @@
           <div class="review_counter">
             <div class="counter_item">
               <h2 class="counter_item_number" data-count="7514">0</h2>
-              <p class="counter_item_text">Реалізованих проектів</p>
+              <p class="counter_item_text" ourProjects">
+                Реалізованих проектів
+              </p>
             </div>
             <div class="counter_item">
               <h2 class="counter_item_number" data-count="1030">0</h2>
-              <p class="counter_item_text">Кількість поліровок</p>
+              <p class="counter_item_text" ourPolishings">
+                Кількість поліровок
+              </p>
             </div>
             <div class="counter_item">
               <h2 class="counter_item_number" data-count="235">0</h2>
-              <p class="counter_item_text">Кількість хімчисток</p>
+              <p class="counter_item_text" ourCleaners">
+                Кількість хімчисток
+              </p>
             </div>
             <div class="counter_item">
               <h2 class="counter_item_number" data-count="5">0</h2>
-              <p class="counter_item_text">Кількість студій</p>
+              <p class="counter_item_text" ourStudios">
+                Кількість студій
+              </p>
             </div>
           </div>
         </div>
@@ -701,32 +757,34 @@
       <div class="container">
         <div class="feedback_content">
           <div class="feedback_shedule">
-            <h3 class="shedule_title">Графік Роботи</h3>
-            <p>Пн 8:00 - 22:00</p>
-            <p>Вт 8:00 - 22:00</p>
-            <p>Ср 8:00 - 22:00</p>
-            <p>Чт 8:00 - 22:00</p>
+            <h3 class="shedule_title" >
+              Графік Роботи
+            </h3>
+            <p >Пн 8:00 - 22:00</p>
+            <p >Вт 8:00 - 22:00</p>
+            <p >Ср 8:00 - 22:00</p>
+            <p >Чт 8:00 - 22:00</p>
             <p>Пт 8:00 - 22:00</p>
-            <p>Сб,Нд - По домовленості</p>
+            <p >Сб,Нд - По домовленості</p>
           </div>
           <div>
             <form class="feedback_form">
-              <h3 class="form_title">Заповніть форму для зв’язку!</h3>
+              <h3 class="form_title" >
+                Заповніть форму для зв’язку!
+              </h3>
               <div class="form-group">
+                <label> 
                 <input
+                name="name"
                   type="text"
                   placeholder="Введіть ваше ім’я..."
                   required
+                  id="feedback_name_input"
                 />
+              </label>
               </div>
               <div class="form-group phone-group">
-                <input
-                  class="input_phone"
-                  type="tel"
-                  value="+43"
-                  placeholder="Enter your phone number"
-                  required
-                />
+                <input class="input_phone" type="tel" value="+43" required />
               </div>
               <div class="form-group">
                 <input
@@ -735,13 +793,23 @@
                   required
                 />
               </div>
-              <label class="politics_label"
-                ><input type="checkbox" required />Я приймаю
-                <a href="politics.html" class="politics_link"
-                  >Політику конфіденційності</a
-                ></label
+              <div>
+                <label class="politics_label"
+                  ><input type="checkbox" required />
+                  <span > Я приймаю </span>
+                  <a
+                    href="politics.html"
+                    class="politics_link"
+                  
+                    >Політику конфіденційності</a
+                  ></label
+                >
+              </div>
+              <button
+                class="form_button"
+                type="submit"
+               
               >
-              <button class="form_button" type="submit">
                 Отримати консультацію
               </button>
             </form>
@@ -753,7 +821,7 @@
     <div class="works">
       <div class="container">
         <div class="works_content">
-          <h2 class="works_title">Наші Роботи</h2>
+          <h2 class="works_title" >Наші Роботи</h2>
           <div class="swiper">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
@@ -797,14 +865,14 @@
       <div class="container">
         <div class="footer_content">
           <div class="footer_address">
-            <h3 class="footer_title">Адреса</h3>
+            <h3 class="footer_title" >Адреса</h3>
             <a
               href="https://www.google.com/maps/dir//%D1%83%D0%BB.+%D0%93%D0%BB%D1%83%D0%B1%D0%BE%D1%87%D0%B8%D1%86%D0%BA%D0%B0%D1%8F,+101,+%D0%9A%D0%B8%D0%B5%D0%B2,+02000/@50.4633817,30.5036264,17z/data=!4m18!1m8!3m7!1s0x40d4ce694535f6cf:0x3e5e781827ce7483!2z0YPQuy4g0JPQu9GD0LHQvtGH0LjRhtC60LDRjywgMTAxLCDQmtC40LXQsiwgMDIwMDA!3b1!8m2!3d50.4633783!4d30.5062067!16s%2Fg%2F11vjlznl8m!4m8!1m0!1m5!1m1!1s0x40d4ce694535f6cf:0x3e5e781827ce7483!2m2!1d30.5062067!2d50.4633783!3e3?entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               class="footer_link"
               >Київ, вул. Глибочицька, 101</a
             >
-            <a href="tel:+431234567" class="footer_link"
+            <a href="tel:+431234567" class="footer_link" 
               >Тел.: +380 67 946 5060</a
             >
             <a
@@ -815,13 +883,21 @@
             >
           </div>
           <div class="footer_nav">
-            <h3 class="footer_title">Навігація</h3>
-            <a href="#top_header" class="footer_link">Головна</a>
-            <a href="#about" class="footer_link">Про Нас</a>
-            <a href="#services" class="footer_link">Наші Послуги</a>
+            <h3 class="footer_title" >Навігація</h3>
+            <a href="#top_header" class="footer_link" 
+              >Головна</a
+            >
+            <a href="#about" class="footer_link" 
+              >Про Нас</a
+            >
+            <a href="#services" class="footer_link" 
+              >Наші Послуги</a
+            >
           </div>
           <div class="footer_socials">
-            <h3 class="footer_title">Наші соцмережі</h3>
+            <h3 class="footer_title" >
+              Наші соцмережі
+            </h3>
             <a
               href="https://www.youtube.com"
               target="_blank"
@@ -848,12 +924,15 @@
     <!-- Copyright -->
     <div class="copyright">
       <p class="copyright_text">
-        Copyright © 2024<a href="politics.html" class="politics_link"
+        Copyright © 2024<a
+          href="politics.html"
+          class="politics_link"
           >ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</a
         >
       </p>
     </div>
 
+    <script src="translation.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
