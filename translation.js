@@ -1,241 +1,402 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//   const translations = {
-//     en: {
-//       email: "E-mail",
-//       phone: "Phone",
-//       contact: "Contact",
-//       location: "Kyiv, Ukraine",
+// Доступные языки и переводы
+const translations = {
+  header_main: {
+    ua: "Головна",
+    en: "Main",
+    de: "Startseite",
+  },
+  header_about: {
+    ua: "Про нас",
+    en: "About Us",
+    de: "Über uns",
+  },
+  header_services: {
+    ua: "Наші послуги",
+    en: "Our Services",
+    de: "Unsere Dienstleistungen",
+  },
+  header_reviews: {
+    ua: "Відгуки",
+    en: "Reviews",
+    de: "Bewertungen",
+  },
+  header_contacts: {
+    ua: "Контакти",
+    en: "Contacts",
+    de: "Kontakte",
+  },
+  topheader_phone: {
+    ua: "Телефон",
+    en: "Phone",
+    de: "Telefon",
+  },
+  topheader_email: {
+    ua: "Ел. пошта",
+    en: "Email",
+    de: "E-Mail",
+  },
+  topheader_contact: {
+    ua: "Зв'язатися",
+    en: "Contact",
+    de: "Kontakt",
+  },
+  intro: {
+    ua: "Більше ніж автосервіс! Якісне обладнання, професіонали авторемонту, індивідуальний підхід до кожного клієнта.",
+    en: "We offer more than just car service. Our commitment to quality, expertise, and personalized care will leave you satisfied.",
+    de: "Wir bieten mehr als nur eine Autoreparatur. Unser Engagement für Qualität, Expertise und individuelle Betreuung wird Sie zufriedenstellen.",
+  },
+  signService: {
+    ua: "Записатися на сервіс",
+    en: "Book a service",
+    de: "Service buchen",
+  },
+  feedback: {
+    ua: "Введіть ваше ім'я...",
+    en: "Enter your name...",
+    de: "Geben Sie Ihren Namen ein...",
+  },
+  about_title: {
+    ua: "Про Нас",
+    en: "About Us",
+    de: "Über uns",
+  },
+  about_first_text: {
+    ua: "Автосервіс Тurboautoservice— це професійний догляд за вашим автомобілем. Ми спеціалізуємося на ремонтних і детейлінгових послугах, поєднуючи швидкість, якість і уважність до деталей.",
+    en: "Turboautoservice Auto Service — professional care for your car. We specialize in repair and detailing services, combining speed, quality, and attention to detail.",
+    de: "Turboautoservice Autoservice — professionelle Pflege für Ihr Auto. Wir sind auf Reparatur- und Detailing-Dienstleistungen spezialisiert und verbinden Schnelligkeit, Qualität und Liebe zum Detail.",
+  },
+  about_second_text: {
+    ua: "Чому ми?",
+    en: "Why us?",
+    de: "Warum wir?",
+  },
+  about_third_text: {
+    ua: "Експертність: Досвідчені майстри забезпечують надійний сервіс із гарантією.",
+    en: "Expertise: Experienced technicians provide reliable service with a guarantee.",
+    de: "Fachkompetenz: Erfahrene Fachleute bieten zuverlässigen Service mit Garantie.",
+  },
+  about_third_text: {
+    ua: "Експертність: Досвідчені майстри забезпечують надійний сервіс із гарантією.",
+    en: "Expertise: Experienced technicians provide reliable service with a guarantee.",
+    de: "Fachkompetenz: Erfahrene Fachleute bieten zuverlässigen Service mit Garantie.",
+  },
+  about_fourth_text: {
+    ua: "Оперативність: Завдяки системі запису ваш автомобіль завжди готовий вчасно.",
+    en: "Efficiency: Thanks to our scheduling system, your car is always ready on time.",
+    de: "Effizienz: Dank unseres Terminplanungssystems ist Ihr Auto immer pünktlich fertig.",
+  },
+  about_fiveth_text: {
+    ua: "Індивідуальний підхід: Ми дбаємо про кожну деталь, щоб ваше авто виглядало бездоганно.",
+    en: "Personalized Approach: We care about every detail to ensure your car looks flawless.",
+    de: "Individueller Ansatz: Wir achten auf jedes Detail, damit Ihr Auto makellos aussieht.",
+  },
+  about_sixth_text: {
+    ua: "Обираючи Тurboautoservice, ви отримуєте більше, ніж просто сервіс — ви отримуєте надійність і турботу про ваше авто.",
+    en: "By choosing Turboautoservice, you get more than just service — you get reliability and care for your car.",
+    de: "Wenn Sie sich für Turboautoservice entscheiden, erhalten Sie mehr als nur einen Service — Sie erhalten Zuverlässigkeit und Fürsorge für Ihr Auto.",
+  },
+  about_first_figure: {
+    ua: "Кваліфіковані спеціалісти завжди готові надати якісні послуги нашим клієнтам з гарантією",
+    en: "Qualified specialists are always ready to provide our clients with high-quality services backed by a guarantee.",
+    de: "Qualifizierte Fachleute sind stets bereit, unseren Kunden hochwertige Dienstleistungen mit Garantie anzubieten.",
+  },
+  about_second_figure: {
+    ua: "Кожного дня в нас працює контакт-центр для консультації та записів наших клієнтів",
+    en: "Our contact center operates daily to assist clients with consultations and appointments.",
+    de: "Unser Kontaktzentrum ist täglich im Einsatz, um Kunden bei Beratungen und Terminvereinbarungen zu unterstützen.",
+  },
+  about_third_figure: {
+    ua: "Ми прагнемо оптимізувати процес покращення Вашого авто і надати послуги високоякісно та швидко",
+    en: "We strive to optimize the process of improving your car and deliver services with both speed and top quality.",
+    de: "Wir bemühen uns, den Prozess der Verbesserung Ihres Autos zu optimieren und Dienstleistungen schnell und in höchster Qualität zu erbringen.",
+  },
+  services_title: {
+    ua: "Наші Послуги",
+    en: "Our Services",
+    de: "Unsere Dienstleistungen",
+  },
+  card_detailing: {
+    ua: "Детейлінг",
+    en: "Detailing",
+    de: "Fahrzeugaufbereitung",
+  },
+  card_diagnostic: {
+    ua: "Діагностика",
+    en: "Diagnostics",
+    de: "Diagnose",
+  },
+  card_electrics: {
+    ua: "Автоелектрика",
+    en: "Auto Electronics",
+    de: "Autoelektrik",
+  },
+  card_repair: {
+    ua: "Ремонт",
+    en: "Repair",
+    de: "Reparatur",
+  },
+  detailing_first_li: {
+    ua: "Глибоке очищення салону від пилу та бруду за допомогою спеціалізованих засобів.",
+    en: "Deep cleaning of the interior from dust and dirt using specialized products.",
+    de: "Tiefenreinigung des Fahrzeuginnenraums von Staub und Schmutz mit spezialisierten Reinigungsmitteln.",
+  },
+  detailing_second_li: {
+    ua: "Захист і реставрація шкіряних та тканинних сидінь, а також інших поверхонь.",
+    en: "Protection and restoration of leather and fabric seats, as well as other surfaces.",
+    de: "Schutz und Restaurierung von Leder- und Stoffpolstern sowie anderen Oberflächen.",
+  },
+  detailing_third_li: {
+    ua: "Усунення неприємних запахів і дезінфекція для створення комфортної атмосфери.",
+    en: "Elimination of unpleasant odors and disinfection to create a comfortable atmosphere.",
+    de: "Entfernung unangenehmer Gerüche und Desinfektion zur Schaffung einer angenehmen Atmosphäre.",
+  },
+  diagnostic_first_li: {
+    ua: "Комп'ютерна діагностика електронних систем автомобіля.",
+    en: "Computer diagnostics of the car's electronic systems.",
+    de: "Computergestützte Diagnose der elektronischen Systeme des Fahrzeugs.",
+  },
+  diagnostic_second_li: {
+    ua: "Перевірка роботи двигуна, трансмісії та інших ключових систем.",
+    en: "Inspection of the engine, transmission, and other key systems.",
+    de: "Überprüfung des Motors, der Getriebe und anderer wichtiger Systeme.",
+  },
+  diagnostic_third_li: {
+    ua: "Визначення можливих несправностей та рекомендації щодо їх усунення.",
+    en: "Identification of potential issues and recommendations for their resolution.",
+    de: "Feststellung möglicher Probleme und Empfehlungen zu deren Behebung.",
+  },
+  electrics_first_li: {
+    ua: "Ремонт та заміна електричних компонентів автомобіля (акумулятори, стартери, генератори).",
+    en: "Repair and replacement of electrical components in the car (batteries, starters, alternators).",
+    de: "Reparatur und Austausch elektrischer Komponenten des Fahrzeugs (Batterien, Starter, Generatoren).",
+  },
+  electrics_second_li: {
+    ua: "Виправлення проблем з освітленням, проводкою та електронними системами.",
+    en: "Fixing issues with lighting, wiring, and electronic systems.",
+    de: "Behebung von Problemen mit Beleuchtung, Verkabelung und elektronischen Systemen.",
+  },
+  electrics_third_li: {
+    ua: "Встановлення додаткових електронних пристроїв (сигналізацій, парктроніків, мультимедійних систем).",
+    en: "Installation of additional electronic devices (alarms, parking sensors, multimedia systems).",
+    de: "Installation zusätzlicher elektronischer Geräte (Alarmanlagen, Parksensoren, Multimediasysteme).",
+  },
+  repair_first_li: {
+    ua: "Усі види ремонтних робіт по двигуну, трансмісії та ходовій частині.",
+    en: "All types of repair work on the engine, transmission, and chassis.",
+    de: "Alle Arten von Reparaturarbeiten am Motor, Getriebe und Fahrwerk.",
+  },
+  repair_second_li: {
+    ua: "Замінa деталей та агрегатів (гальмівні системи, підвіска, зчеплення).",
+    en: "Replacement of parts and assemblies (braking systems, suspension, clutch).",
+    de: "Austausch von Teilen und Baugruppen (Bremssysteme, Aufhängung, Kupplung).",
+  },
+  repair_third_li: {
+    ua: "Виправлення кузовних пошкоджень та лакофарбових покриттів.",
+    en: "Repair of body damage and restoration of paintwork.",
+    de: "Behebung von Karosserieschäden und Wiederherstellung der Lackierung.",
+  },
+  card_btn: {
+    ua: "Детальніше",
+    en: "More",
+    de: "Mehr",
+  },
+  enter_name: {
+    ua: "Введіть ваше ім’я...",
+    en: "Enter your name...",
+    de: "Geben Sie Ihren Namen ein...",
+  },
+  modal_carbrand: {
+    ua: "Оберіть марку авто...",
+    en: "Select your car brand...",
+    de: "Wählen Sie Ihre Automarke aus...",
+  },
+  modal_carmark: {
+    ua: "Спочатку оберіть марку авто!",
+    en: "First, select a car brand!",
+    de: "Wählen Sie zuerst eine Automarke aus!",
+  },
+  modal_services: {
+    ua: "Послуги:",
+    en: "Services:",
+    de: "Dienstleistungen:",
+  },
+  modal_total: {
+    ua: "Сума від: €0.00",
+    en: "Total from: €0.00",
+    de: "Summe ab: €0.00",
+  },
+  accept: {
+    ua: "Я приймаю",
+    en: "I accept",
+    de: "Ich akzeptiere",
+  },
+  politics: {
+    ua: "Політику конфіденційності",
+    en: "the Privacy Policy",
+    de: "die Datenschutzrichtlinie",
+  },
+  clients_title: {
+    ua: "Наші Клієнти",
+    en: "Our Clients",
+    de: "Unsere Kunden",
+  },
+  first_client_name: {
+    ua: "Андрій Кравчук (Україна)",
+    en: "Andrii Kravchuk (Ukraine)",
+    de: "Andrii Kravchuk (Ukraine)",
+  },
+  second_client_name: {
+    ua: "Олексій Дорошенко (Україна)",
+    en: "Oleksii Doroshenko (Ukraine)",
+    de: "Oleksii Doroshenko (Ukraine)",
+  },
+  third_client_name: {
+    ua: "Йоган Келлер (Австрія)",
+    en: "Johann Keller (Austria)",
+    de: "Johann Keller (Austria)",
+  },
+  first_client_text: {
+    ua: "Привозив авто на ремонт ходової частини. Все зробили на найвищому рівні, ще й запропонували безкоштовну діагностику в майбутньому. Сервіс супер, персонал привітний, ціни адекватні!",
+    en: "Brought his car in for chassis repair. Everything was done at the highest level, and they even offered free diagnostics for the future. Excellent service, friendly staff, and reasonable prices!",
+    de: "Hat sein Auto zur Reparatur des Fahrwerks gebracht. Alles wurde auf höchstem Niveau erledigt, und sie boten sogar kostenlose Diagnosen für die Zukunft an. Hervorragender Service, freundliches Personal und angemessene Preise!",
+  },
+  second_client_text: {
+    ua: "Звертався в цей автосервіс на діагностику двигуна. Роботу виконали швидко, все детально пояснили. Дуже сподобалася відповідальність майстрів та сучасне обладнання. Тепер тільки до вас! Рекомендую!",
+    en: "Visited this service center for engine diagnostics. The work was done quickly, and everything was explained in detail. I really appreciated the responsibility of the technicians and the modern equipment. From now on, only here! Highly recommend!",
+    de: "War in dieser Werkstatt zur Motor-Diagnose. Die Arbeit wurde schnell erledigt, und alles wurde detailliert erklärt. Ich schätze die Verantwortung der Techniker und die moderne Ausrüstung sehr. Ab jetzt nur noch hier! Sehr zu empfehlen!",
+  },
+  third_client_text: {
+    ua: "Мені порадили цей сервіс друзі. Дуже задоволений високим рівнем обслуговування! Робив ремонт гальмівної системи. Все виконали чітко і вчасно. Надійне місце, яке варто відвідати.",
+    en: "Friends recommended this service to me. I am very satisfied with the high level of service! I had the brake system repaired. Everything was done precisely and on time. A reliable place worth visiting.",
+    de: "Mir wurde dieser Service von Freunden empfohlen. Ich bin sehr zufrieden mit dem hohen Serviceniveau! Ich ließ das Bremssystem reparieren. Alles wurde präzise und pünktlich erledigt. Ein zuverlässiger Ort, der einen Besuch wert ist.",
+  },
+  projects: {
+    ua: "Реалізованих проектів",
+    en: "Completed Projects",
+    de: "Abgeschlossene Projekte",
+  },
+  polishings: {
+    ua: "Кількість поліровок",
+    en: "Number of Polishings",
+    de: "Anzahl der Polierungen",
+  },
+  cleanings: {
+    ua: "Кількість хімчисток",
+    en: "Number of Interior Cleanings",
+    de: "Anzahl der Innenraumreinigungen",
+  },
+  studios: {
+    ua: "Кількість студій",
+    en: "Number of Studios",
+    de: "Anzahl der Studios",
+  },
+  shedule_title: {
+    ua: "Графік Роботи",
+    en: "Working Hours",
+    de: "Öffnungszeiten",
+  },
+  monday: {
+    ua: "Пн 8:00 - 22:00",
+    en: "Mon 8:00 AM - 10:00 PM",
+    de: "Mo 8:00 - 22:00",
+  },
+  tuesday: {
+    ua: "Вт 8:00 - 22:00",
+    en: "Tue 8:00 AM - 10:00 PM",
+    de: "Di 8:00 - 22:00",
+  },
+  wednesday: {
+    ua: "Ср 8:00 - 22:00",
+    en: "Wed 8:00 AM - 10:00 PM",
+    de: "Mi 8:00 - 22:00",
+  },
+  thursday: {
+    ua: "Чт 8:00 - 22:00",
+    en: "Thu 8:00 AM - 10:00 PM",
+    de: "Do 8:00 - 22:00",
+  },
+  friday: {
+    ua: "Пт 8:00 - 22:00",
+    en: "Fri 8:00 AM - 10:00 PM",
+    de: "Fr 8:00 - 22:00",
+  },
+  weekend: {
+    ua: "Сб,Нд - По домовленості",
+    en: "Sat, Sun - By appointment",
+    de: "Sa, So - Nach Vereinbarung",
+  },
+  works_title: {
+    ua: "Наші Роботи",
+    en: "Our Works",
+    de: "Unsere Arbeiten",
+  },
+  car_name: {
+    ua: "Введіть назву Вашого авто...",
+    en: "Enter the name of your car...",
+    de: "Geben Sie den Namen Ihres Autos ein...",
+  },
+  feedback_btn: {
+    ua: "Отримати консультацію",
+    en: "Get a consultation",
+    de: "Beratung erhalten",
+  },
+  footer_address: {
+    ua: "Адреса",
+    en: "Address",
+    de: "Adresse",
+  },
+  footer_nav: {
+    ua: "Навігація",
+    en: "Navigation",
+    de: "Navigation",
+  },
+  footer_socials: {
+    ua: "Наші соцмережі",
+    en: "Our Socials",
+    de: "Unsere sozialen",
+  },
+};
 
-//       headerMain: "Main",
-//       headerAbout: "About Us",
-//       headerServices: "Our Services",
-//       headerReviews: "Reviews",
-//       headerContact: "Contacts",
+// Текущий язык (по умолчанию — английский)
+let currentLang = "de";
 
-//       introTitle: "This title wrote in English",
+// Функция обновления переводов
+function updateTranslation() {
+  // Находим все элементы с data-translate-key
+  const elements = document.querySelectorAll("[data-translate-key]");
 
-//       signService: "Sign up for the service",
-//       aboutTitle: "About Us",
-//       aboutText:
-//         "Detailing center “Luxusautocare” is a leader in the field of repair and detailing services for your car. Our professionals provide detailed advice on car care and elimination of aesthetic defects. Experienced craftsmen help maintain the technical and visual components of our clients' cars in excellent condition not only externally, but also internally.",
-//       aboutSubText:
-//         "Why choose our studio? We believe in quality care for your car! For us, a passion for cars is not just a job, but a real passion, so we know perfectly how to provide the best service. Meeting deadlines is our priority, and thanks to the pre-booking system, you always get your car on time. We pay attention to every detail, give our all 110% and do everything to make your car look perfect.",
-//       aboutFirstFigure:
-//         "Qualified specialists are always ready to provide quality services to our clients with a guarantee",
-//       aboutSecondFigure:
-//         "Every day we have a contact center for consultation and bookings for our clients.",
-//       aboutThirdFigure:
-//         "We strive to optimize the process of improving your car and provide high-quality and fast services.",
+  elements.forEach((element) => {
+    const key = element.dataset.translateKey; // Читаем ключ
+    if (translations[key] && translations[key][currentLang]) {
+      element.textContent = translations[key][currentLang]; // Обновляем текст
+    }
+  });
 
-//       servicesTitle: "Our Services",
-//       detailingTitle: "Detailing",
-//       diagnosticTitle: "Diagnostics",
-//       electronicTitle: "Auto Electrics",
-//       repairTitle: "Repair",
+  // Обновляем плейсхолдеры отдельно (если нужно)
+  const feedbackNameInput = document.getElementById("feedback_name_input");
+  if (feedbackNameInput) {
+    feedbackNameInput.placeholder =
+      translations["enter_name"]?.[currentLang] || "Translation not available";
+  }
 
-//       detailingFirstLi:
-//         "Deep cleaning of the interior from dust and dirt using specialized products.",
-//       detailingSecondLi:
-//         "Protection and restoration of leather and fabric seats, as well as other surfaces.",
-//       detailingThirdLi:
-//         "Elimination of unpleasant odors and disinfection to create a comfortable atmosphere.",
+  const modalNameInput = document.getElementById("modal_name_input");
+  if (modalNameInput) {
+    modalNameInput.placeholder =
+      translations["enter_name"]?.[currentLang] || "Translation not available";
+  }
 
-//       diagnosticFirstLi:
-//         "Computer diagnostics of the vehicle's electronic systems.",
-//       diagnosticSecondLi:
-//         "Checking the operation of the engine, transmission, and other key systems.",
-//       diagnosticThirdLi:
-//         "Identification of potential malfunctions and recommendations for their elimination.",
+  const carNameInput = document.getElementById("car_name_input");
+  if (carNameInput) {
+    carNameInput.placeholder =
+      translations["car_name"]?.[currentLang] || "Translation not available";
+  }
+}
 
-//       electronicFirstLi:
-//         "Repair and replacement of vehicle electrical components (batteries, starters, generators).",
-//       electronicSecondLi:
-//         "Troubleshooting lighting, wiring, and electronic systems.",
-//       electronicThirdLi:
-//         "Installation of additional electronic devices (alarms, parking sensors, multimedia systems).",
+// Слушатель изменения языка
+document.getElementById("lang_select").addEventListener("change", (event) => {
+  currentLang = event.target.value; // Получаем выбранный язык
+  updateTranslation(); // Обновляем перевод
+});
 
-//       repairFirstLi:
-//         "All types of repair work on the engine, transmission, and chassis.",
-//       repairSecondLi:
-//         "Replacement of parts and assemblies (brake systems, suspension, clutch).",
-//       repairThirdLi: "Repair of body damage and paintwork.",
-//       cardButtonText: "More",
-
-//       signService: "Sign up for service",
-//       enterName: "Enter your name...",
-//       enterPhone: "Enter your phone number",
-//       selectCarMake: "Select car make...",
-//       selectCarModel: "Select car make first!",
-//       servicesModalTitle: "Services:",
-//       detailingCheckbox: "Detailing",
-//       diagnosticsCheckbox: "Diagnostics",
-//       electronicsCheckbox: "Auto electronics",
-//       repairCheckbox: "Repair",
-//       totalCost: "Total cost from: €0.00",
-//       acceptPrivacy: "I accept the",
-//       privacyPolicy: "Privacy Policy",
-
-//       clientsTitle: "Our Clients",
-//       ourProjects: "Implemented projects",
-//       ourPolishings: "Number of polishings",
-//       ourCleaners: "Number of dry cleaners",
-//       ourStudios: "Number of studios",
-
-//       sheduleTitle: "Working Hours",
-//       monday: "Mon 8:00 AM - 10:00 PM",
-//       tuesday: "Tue 8:00 AM - 10:00 PM",
-//       wednesday: "Wed 8:00 AM - 10:00 PM",
-//       thursday: "Thu 8:00 AM - 10:00 PM",
-//       friday: "Fri 8:00 AM - 10:00 PM",
-//       weekend: "Sat, Sun - By appointment",
-
-//       feedbackFormTitle: "Fill out the contact form!",
-//       enterCarName: "Enter the name of your car...",
-//       feedbackFormButton: "Get a consultation",
-
-//       worksTitle: "Our Works",
-
-//       footerAddress: "Address",
-//       footerNav: "Navigation",
-//       footerSocials: "Our Socials",
-//       footerPhone: "Phone: +380 67 946 5060",
-//       footerEmail: "E-mail: serviceauto@gmail.com",
-//     },
-//     de: { welcome: "Willkommen", logout: "Abmelden" },
-//     uk: {
-//       // Top header
-//       email: "Ел. пошта",
-//       phone: "Телефон",
-//       contact: "Зв'язатись",
-//       location: "Київ, Україна",
-//       // header
-//       headerMain: "Головна",
-//       headerAbout: "Про нас",
-//       headerServices: "Наші послуги",
-//       headerReviews: "Відгуки",
-//       headerContact: "Контакти",
-//       // intro
-//       introTitle: "Цей заголовок написаний Українською",
-//       signService: "Записатися на сервіс",
-//       // about
-//       aboutTitle: "Про Нас",
-//       aboutText:
-//         "Детейлінг центр “Luxusautocare” - лідер у сфері ремонтних та детейлінгових послуг для вашого авто. Наші професіонали надають детальну консультацію по догляду за автомобілем та усунення естетичних недоліків. Досвідчені майстри допомагають підтримувати технічну та візуальну складову авто наших клієнтів у відмінному стані не тільки зовнішньо, але й внутрішньо.",
-//       aboutSubText:
-//         "Чому обирають саме нашу студію? Ми віримо в якісний догляд за вашим авто! Захоплення автомобілями для нас — це не просто робота, а справжня пристрасть, тому ми досконало знаємо, як забезпечити найкращий сервіс. Дотримання термінів — наш пріоритет, і завдяки системі попереднього запису ви завжди отримуєте своє авто вчасно. Ми приділяємо увагу кожній дрібниці, викладаємося на всі 110% і робимо все, щоб ваш автомобіль виглядав бездоганно.",
-//       aboutFirstFigure:
-//         "Кваліфіковані спеціалісти завжди готові надати якісні послуги нашим клієнтам з гарантією",
-//       aboutSecondFigure:
-//         "Кожного дня в нас працює контакт-центр для консультації та записів наших клієнтів",
-//       aboutThirdFigure:
-//         "Ми прагнемо оптимізувати процес покращення Вашого авто і надати послуги високоякісно та швидко",
-//       // SERVICES
-//       servicesTitle: "Наші Послуги",
-//       detailingTitle: "Детейлінг",
-//       diagnosticTitle: "Діагностика",
-//       electronicTitle: "Автоелектрика",
-//       repairTitle: "Ремонт",
-
-//       detailingFirstLi:
-//         "Глибоке очищення салону від пилу та бруду за допомогою спеціалізованих засобів.",
-//       detailingSecondLi:
-//         "Захист і реставрація шкіряних та тканинних сидінь, а також інших поверхонь.",
-//       detailingThirdLi:
-//         "Усунення неприємних запахів і дезінфекція для створення комфортної атмосфери.",
-
-//       diagnosticFirstLi:
-//         "Комп'ютерна діагностика електронних систем автомобіля.",
-//       diagnosticSecondLi:
-//         "Перевірка роботи двигуна, трансмісії та інших ключових систем.",
-//       diagnosticThirdLi:
-//         "Визначення можливих несправностей та рекомендації щодо їх усунення.",
-
-//       electronicFirstLi:
-//         "Ремонт та заміна електричних компонентів автомобіля (акумулятори, стартери, генератори).",
-//       electronicSecondLi:
-//         "Виправлення проблем з освітленням, проводкою та електронними системами.",
-//       electronicThirdLi:
-//         "Встановлення додаткових електронних пристроїв (сигналізацій, парктроніків, мультимедійних систем).",
-
-//       repairFirstLi:
-//         "Усі види ремонтних робіт по двигуну, трансмісії та ходовій частині.",
-//       repairSecondLi:
-//         "Замінa деталей та агрегатів (гальмівні системи, підвіска, зчеплення).",
-//       repairThirdLi:
-//         "Виправлення кузовних пошкоджень та лакофарбових покриттів.",
-//       cardButtonText: "Детальніше",
-//       // MODAL
-//       signService: "Записатися на сервіс",
-//       enterName: "Введіть ваше ім’я...",
-//       enterPhone: "Введіть номер телефону",
-//       selectCarMake: "Оберіть марку авто...",
-//       selectCarModel: "Спочатку оберіть марку авто!",
-//       servicesModalTitle: "Послуги:",
-//       detailing: "Детейлінг",
-//       diagnostics: "Діагностика",
-//       electronics: "Автоелектрика",
-//       repair: "Ремонт",
-//       totalCost: "Загальна вартість від: €0.00",
-//       acceptPrivacy: "Я приймаю",
-//       privacyPolicy: "Політику конфіденційності",
-
-//       clientsTitle: "Наші клієнти",
-//       ourProjects: "Реалізовані проєкти",
-//       ourPolishings: "Кількість полірувань",
-//       ourCleaners: "Кількість хімчисток",
-//       ourStudios: "Кількість студій",
-
-//       sheduleTitle: "Графік роботи",
-//       monday: "Пн 8:00 - 22:00",
-//       tuesday: "Вт 8:00 - 22:00",
-//       wednesday: "Ср 8:00 - 22:00",
-//       thursday: "Чт 8:00 - 22:00",
-//       friday: "Пт 8:00 - 22:00",
-//       weekend: "Сб, Нд - за записом",
-
-//       feedbackFormTitle: "Заповніть контактну форму!",
-//       enterCarName: "Введіть назву вашого авто...",
-//       feedbackFormButton: "Отримати консультацію",
-
-//       worksTitle: "Наші роботи",
-
-//       footerAddress: "Адреса",
-//       footerNav: "Навігація",
-//       footerSocials: "Ми у соцмережах",
-//       footerPhone: "Телефон: +380 67 946 5060",
-//       footerEmail: "E-mail: serviceauto@gmail.com",
-//     },
-//   };
-
-//   function translatePage(lang) {
-//     // Перевод текста
-//     document.querySelectorAll("[data-i18n]").forEach((el) => {
-//       const key = el.getAttribute("data-i18n");
-//       el.textContent = translations[lang][key] || key;
-//     });
-
-//     // Перевод плейсхолдеров, только если поле пустое
-//     document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
-//       const key = el.getAttribute("data-i18n-placeholder");
-
-//       // Изменяем плейсхолдер только если поле пустое
-//       if (!el.value) {
-//         el.setAttribute("placeholder", translations[lang][key] || key);
-//       }
-//     });
-//   }
-
-//   function handleLanguageChange() {
-//     const lang = document.getElementById("lang_select").value;
-//     translatePage(lang);
-//   }
-
-//   // Установить язык по умолчанию
-//   const defaultLang = "en";
-//   translatePage(defaultLang);
-
-//   // Привязать обработчик к <select>
-//   document
-//     .getElementById("lang_select")
-//     .addEventListener("change", handleLanguageChange);
-// });
+// Инициализация перевода при загрузке страницы
+updateTranslation();

@@ -352,6 +352,10 @@ header {
   height: 400px;
 }
 
+.about_why {
+  text-align: center;
+}
+
 .about_text {
   display: flex;
   flex-direction: column;
@@ -363,6 +367,7 @@ header {
   font-weight: 500;
   text-shadow: 2px 2px 6px #000;
   line-height: 1.5;
+  margin-bottom: 5px;
 }
 
 .about_text p:first-child {

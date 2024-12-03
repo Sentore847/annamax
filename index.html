@@ -49,6 +49,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="translation.js" defer></script>
     <title>Austria Auto Service</title>
   </head>
   <body>
@@ -215,9 +216,9 @@
                 <use xlink:href="#phone"></use>
               </svg>
               <div class="top_header_icon_text">
-                <h4 class="top_header_icon_title">Телефон</h4>
-                <a href="tel:+431234567" class="top_header_icon_subtitle"
-                  >+431234567</a
+                <h4 class="top_header_icon_title" data-translate-key="topheader_phone">Телефон</h4>
+                <a href="tel:+380665809263" class="top_header_icon_subtitle"
+                  >+380665809263</a
                 >
               </div>
             </span>
@@ -228,12 +229,12 @@
               </svg>
               <div class="top_header_icon_text">
                 <a
-                  href="https://www.google.com/maps/dir//%D1%83%D0%BB.+%D0%93%D0%BB%D1%83%D0%B1%D0%BE%D1%87%D0%B8%D1%86%D0%BA%D0%B0%D1%8F,+101,+%D0%9A%D0%B8%D0%B5%D0%B2,+02000/@50.4633817,30.5036264,17z/data=!4m18!1m8!3m7!1s0x40d4ce694535f6cf:0x3e5e781827ce7483!2z0YPQuy4g0JPQu9GD0LHQvtGH0LjRhtC60LDRjywgMTAxLCDQmtC40LXQsiwgMDIwMDA!3b1!8m2!3d50.4633783!4d30.5062067!16s%2Fg%2F11vjlznl8m!4m8!1m0!1m5!1m1!1s0x40d4ce694535f6cf:0x3e5e781827ce7483!2m2!1d30.5062067!2d50.4633783!3e3?entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoASAFQAw%3D%3D"
+                  href="https://www.google.com/maps/dir//La%C3%9Fnitzthal+300,+8200+La%C3%9Fnitzthal,+%D0%90%D0%B2%D1%81%D1%82%D1%80%D0%B8%D1%8F/@47.0788412,15.6473568,17z/data=!4m18!1m8!3m7!1s0x476e4de11889771b:0x15a56e06f63a932d!2zTGHDn25pdHp0aGFsIDMwMCwgODIwMCBMYcOfbml0enRoYWwsINCQ0LLRgdGC0YDQuNGP!3b1!8m2!3d47.0788412!4d15.6473568!16s%2Fg%2F11c2g8hg69!4m8!1m0!1m5!1m1!1s0x476e4de11889771b:0x15a56e06f63a932d!2m2!1d15.6473568!2d47.0788412!3e3?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                 >
-                  <h4 class="top_header_icon_title">вул. Глибочицька, 101</h4>
+                  <h4 class="top_header_icon_title">Laßnitzthal 300, 8200</h4>
                   <p class="top_header_icon_subtitle" >
-                    Київ, Україна
+                    Gleisdorf, Austria
                   </p>
                 </a>
               </div>
@@ -244,13 +245,13 @@
                 <use xlink:href="#mail"></use>
               </svg>
               <div class="top_header_icon_text">
-                <h4 class="top_header_icon_title" >
+                <h4 class="top_header_icon_title" data-translate-key="topheader_email">
                   Ел. пошта
                 </h4>
                 <a
-                  href="mailto:autoservice@gmail.com"
+                  href="mailto:info.autodienst.at@gmail.com"
                   class="top_header_icon_subtitle"
-                  >autoservice@gmail.com</a
+                  >info.autodienst.at@gmail.com</a
                 >
               </div>
             </span>
@@ -262,10 +263,10 @@
               <div class="top_header_icon_text">
                 <h4 class="top_header_icon_title">Viber</h4>
                 <a
-                  href="https://www.viber.com/ru/download/"
+                  href="viber://chat?number=%2B380665809263"
                   class="top_header_icon_subtitle"
                   target="_blank"
-                
+                  data-translate-key="topheader_contact"
                   >Contact</a
                 >
               </div>
@@ -278,10 +279,10 @@
               <div class="top_header_icon_text">
                 <h4 class="top_header_icon_title">Telegram</h4>
                 <a
-                  href="https://t.me/idgrigodev"
+                  href="https://t.me/+380665809263"
                   class="top_header_icon_subtitle"
                   target="_blank"
-                  
+                  data-translate-key="topheader_contact"
                   >Contact</a
                 >
               </div>
@@ -294,9 +295,10 @@
               <div class="top_header_icon_text">
                 <h4 class="top_header_icon_title">Whatsapp</h4>
                 <a
-                  href="https://t.me/idgrigodev"
+                  href="https://wa.me/380665809263"
                   class="top_header_icon_subtitle"
                   target="_blank"
+                  data-translate-key="topheader_contact"
                   >Contact</a
                 >
               </div>
@@ -308,31 +310,35 @@
         <div class="header_logo"></div>
         <div class="header_nav">
           <nav>
-            <a href="#top_header" class="header_nav_link" 
+            <a href="#top_header" class="header_nav_link" id="header_nav_main"
+            data-translate-key="header_main"
               >Головна</a
             >
-            <a href="#about" class="header_nav_link" 
+            <a href="#about" class="header_nav_link" id="header_nav_about"
+            data-translate-key="header_about"
               >Про нас</a
             >
             <a
               href="#services"
               class="header_nav_link"
-             
+              data-translate-key="header_services"
               >Наші послуги</a
             >
-            <a href="#clients" class="header_nav_link" 
+            <a href="#clients" class="header_nav_link"
+            data-translate-key="header_reviews"
               >Відгуки</a
             >
-            <a href="#footer" class="header_nav_link" 
+            <a href="#footer" class="header_nav_link"
+            data-translate-key="header_contacts"
               >Контакти</a
             >
           </nav>
         </div>
         <div class="lang_switcher">
           <select id="lang_select">
-            <option value="en">English</option>
             <option value="de">Deutsch</option>
-            <option value="uk">Українська</option>
+            <option value="en">English</option>
+            <option value="ua">Українська</option>
           </select>
         </div>
       </div>
@@ -345,19 +351,24 @@
         <span></span>
       </div>
       <nav class="burger-nav" id="burgerNav">
-        <a href="#top_header" class="header_nav_link" headerMain"
+        <a href="#top_header" class="header_nav_link"
+        data-translate-key="header_main"
           >Головна</a
         >
-        <a href="#about" class="header_nav_link" headerAbout"
+        <a href="#about" class="header_nav_link"
+        data-translate-key="header_about" 
           >Про нас</a
         >
-        <a href="#services" class="header_nav_link" headerServices"
+        <a href="#services" class="header_nav_link"
+        data-translate-key="header_services"
           >Наші послуги</a
         >
-        <a href="#clients" class="header_nav_link" headerReviews"
+        <a href="#clients" class="header_nav_link" 
+        data-translate-key="header_reviews" 
           >Відгуки</a
         >
-        <a href="#footer" class="header_nav_link" headerContact"
+        <a href="#footer" class="header_nav_link" 
+        data-translate-key="header_contacts" 
           >Контакти</a
         >
       </nav>
@@ -374,11 +385,11 @@
       </div>
 
       <div class="intro_content">
-        <h1 class="intro_content_title" id="intro_title">
-          Цей заголовок написаний Українською
+        <h1 class="intro_content_title" data-translate-key="intro">
+          Більше ніж автосервіс! Якісне обладнання, професіонали авторемонту, індивідуальний підхід до кожного клієнта.
         </h1>
         <a href="#feedback">
-          <button class="intro_content_button" >
+          <button class="intro_content_button" data-translate-key="signService">
             Записатися на сервіс
           </button>
         </a>
@@ -389,7 +400,7 @@
     <div class="about" id="about">
       <div class="container">
         <div class="about_content">
-          <h2 class="about_title" >Про Нас</h2>
+          <h2 class="about_title" data-translate-key="about_title">Про Нас</h2>
 
           <div class="about_info">
             <div class="about_image">
@@ -397,24 +408,17 @@
             </div>
 
             <div class="about_text">
-              <p >
-                Детейлінг центр “Luxusautocare” - лідер у сфері ремонтних та
-                детейлінгових послуг для вашого авто. Наші професіонали надають
-                детальну консультацію по догляду за автомобілем та усунення
-                естетичних недоліків. Досвідчені майстри допомагають
-                підтримувати технічну та візуальну складову авто наших клієнтів
-                у відмінному стані не тільки зовнішньо, але й внутрішньо.
+              <p data-translate-key="about_first_text">
+                Автосервіс Тurboautoservice— це професійний догляд за вашим автомобілем. Ми спеціалізуємося на ремонтних і детейлінгових послугах, поєднуючи швидкість, якість і уважність до деталей.
               </p>
-              <p >
-                Чому обирають саме нашу студію? Ми віримо в якісний догляд за
-                вашим авто! Захоплення автомобілями для нас — це не просто
-                робота, а справжня пристрасть, тому ми досконало знаємо, як
-                забезпечити найкращий сервіс. Дотримання термінів — наш
-                пріоритет, і завдяки системі попереднього запису ви завжди
-                отримуєте своє авто вчасно. Ми приділяємо увагу кожній дрібниці,
-                викладаємося на всі 110% і робимо все, щоб ваш автомобіль
-                виглядав бездоганно.
+              <p class="about_why" data-translate-key="about_second_text">Чому ми?
               </p>
+              <p data-translate-key="about_third_text">
+                Експертність: Досвідчені майстри забезпечують надійний сервіс із гарантією.
+              </p>
+              <p data-translate-key="about_fourth_text">Оперативність: Завдяки системі запису ваш автомобіль завжди готовий вчасно.</p>
+              <p data-translate-key="about_fiveth_text">Індивідуальний підхід: Ми дбаємо про кожну деталь, щоб ваше авто виглядало бездоганно.</p>
+              <p data-translate-key="about_fiveth_text">Обираючи Тurboautoservice, ви отримуєте більше, ніж просто сервіс — ви отримуєте надійність і турботу про ваше авто.</p>
             </div>
           </div>
 
@@ -422,6 +426,7 @@
             <span class="figure_item">
               <p class="figure">1</p>
               <span class="figure_text" 
+              data-translate-key="about_first_figure"
                 >Кваліфіковані спеціалісти завжди готові надати якісні послуги
                 нашим клієнтам з гарантією</span
               >
@@ -429,7 +434,8 @@
 
             <span class="figure_item">
               <p class="figure">2</p>
-              <span class="figure_text" 
+              <span class="figure_text"
+              data-translate-key="about_second_figure"
                 >Кожного дня в нас працює контакт-центр для консультації та
                 записів наших клієнтів</span
               >
@@ -438,6 +444,7 @@
             <span class="figure_item">
               <p class="figure">3</p>
               <span class="figure_text" 
+              data-translate-key="about_third_figure"
                 >Ми прагнемо оптимізувати процес покращення Вашого авто і надати
                 послуги високоякісно та швидко</span
               >
@@ -450,7 +457,7 @@
     <!-- Services -->
     <div class="services" id="services">
       <div class="container">
-        <h2 class="services_title" >Наші Послуги</h2>
+        <h2 class="services_title" data-translate-key="services_title">Наші Послуги</h2>
         <div class="services_cards">
           <div class="sevices_card_item">
             <div class="card_img_block">
@@ -461,23 +468,23 @@
               />
             </div>
 
-            <h3 class="card_title" >Детейлінг</h3>
+            <h3 class="card_title" data-translate-key="card_detailing">Детейлінг</h3>
             <ul class="service_card_list">
-              <li >
+              <li data-translate-key="detailing_first_li">
                 Глибоке очищення салону від пилу та бруду за допомогою
                 спеціалізованих засобів.
               </li>
-              <li >
+              <li data-translate-key="detailing_second_li">
                 Захист і реставрація шкіряних та тканинних сидінь, а також інших
                 поверхонь.
               </li>
-              <li >
+              <li data-translate-key="detailing_third_li">
                 Усунення неприємних запахів і дезінфекція для створення
                 комфортної атмосфери.
               </li>
             </ul>
             <div class="card_button_block">
-              <button class="card_btn" >
+              <button class="card_btn" data-translate-key="card_btn">
                 Детальніше
               </button>
             </div>
@@ -491,21 +498,21 @@
                 alt="diagnostic"
               />
             </div>
-            <h3 class="card_title" >Діагностика</h3>
+            <h3 class="card_title" data-translate-key="card_diagnostic">Діагностика</h3>
             <ul class="service_card_list">
-              <li >
+              <li data-translate-key="diagnostic_first_li">
                 Комп'ютерна діагностика електронних систем автомобіля.
               </li>
-              <li >
+              <li data-translate-key="diagnostic_second_li">
                 Перевірка роботи двигуна, трансмісії та інших ключових систем.
               </li>
-              <li >
+              <li data-translate-key="diagnostic_third_li">
                 Визначення можливих несправностей та рекомендації щодо їх
                 усунення.
               </li>
             </ul>
             <div class="card_button_block">
-              <button class="card_btn" >
+              <button class="card_btn" data-translate-key="card_btn">
                 Детальніше
               </button>
             </div>
@@ -517,25 +524,25 @@
               src="img/electronics128.png"
               alt="electronics"
             />
-            <h3 class="card_title" >
+            <h3 class="card_title" data-translate-key="card_electrics">
               Автоелектрика
             </h3>
             <ul class="service_card_list">
-              <li >
+              <li data-translate-key="electrics_first_li">
                 Ремонт та заміна електричних компонентів автомобіля
                 (акумулятори, стартери, генератори).
               </li>
-              <li >
+              <li data-translate-key="electrics_second_li">
                 Виправлення проблем з освітленням, проводкою та електронними
                 системами.
               </li>
-              <li >
+              <li data-translate-key="electrics_third_li">
                 Встановлення додаткових електронних пристроїв (сигналізацій,
                 парктроніків, мультимедійних систем).
               </li>
             </ul>
             <div class="card_button_block">
-              <button class="card_btn" >
+              <button class="card_btn" data-translate-key="card_btn">
                 Детальніше
               </button>
             </div>
@@ -543,22 +550,22 @@
 
           <div class="sevices_card_item">
             <img class="card_image" src="img/repare128.png" alt="repare" />
-            <h3 class="card_title" >Ремонт</h3>
+            <h3 class="card_title" data-translate-key="card_repair">Ремонт</h3>
             <ul class="service_card_list">
-              <li >
+              <li data-translate-key="repair_first_li">
                 Усі види ремонтних робіт по двигуну, трансмісії та ходовій
                 частині.
               </li>
-              <li >
+              <li data-translate-key="repair_second_li">
                 Замінa деталей та агрегатів (гальмівні системи, підвіска,
                 зчеплення).
               </li>
-              <li >
+              <li data-translate-key="repair_third_li">
                 Виправлення кузовних пошкоджень та лакофарбових покриттів.
               </li>
             </ul>
             <div class="card_button_block">
-              <button class="card_btn" >
+              <button class="card_btn" data-translate-key="card_btn">
                 Детальніше
               </button>
             </div>
@@ -572,7 +579,7 @@
               <span>X</span>
             </div>
             <div class="form-group">
-              <input type="text" placeholder="Введіть ваше ім’я..." required />
+              <input name="name" type="text" placeholder="Введіть ваше ім’я..." required id="modal_name_input" />
             </div>
             <div class="form-group phone-group">
               <input
@@ -584,8 +591,8 @@
               />
             </div>
             <div class="form-group">
-              <select name="car_make" id="car_make">
-                <option value="" disabled selected >
+              <select name="car_make" id="car_make" >
+                <option value="" disabled selected data-translate-key="modal_carbrand">
                   Оберіть марку авто...
                 </option>
                 <option value="toyota">Toyota</option>
@@ -603,53 +610,53 @@
 
             <div class="form-group" id="model_select">
               <select name="car_model" id="car_model">
-                <option value="" disabled selected >
+                <option value="" disabled selected data-translate-key="modal_carmark">
                   Спочатку оберіть марку авто!
                 </option>
               </select>
             </div>
 
-            <h3 class="modal_form_title" >
+            <h3 class="modal_form_title" data-translate-key="modal_services">
               Послуги:
             </h3>
             <div class="modal_form_services">
               <div class="modal_labels">
                 <label for="detailing_input">
                   <input id="detailing_input" type="checkbox" />
-                  <span >Детейлінг</span>
+                  <span data-translate-key="card_detailing">Детейлінг</span>
                 </label>
 
                 <label for="diagnostic_input">
                   <input id="diagnostic_input" type="checkbox" />
-                  <span >Діагностика</span>
+                  <span data-translate-key="card_diagnostic">Діагностика</span>
                 </label>
 
                 <label for="electronics_input">
                   <input id="electronics_input" type="checkbox" />
-                  <span >Автоелектрика</span>
+                  <span data-translate-key="card_electrics">Автоелектрика</span>
                 </label>
 
                 <label for="repare_input">
                   <input id="repare_input" type="checkbox" />
-                  <span >Ремонт</span>
+                  <span data-translate-key="card_repair">Ремонт</span>
                 </label>
               </div>
             </div>
-            <p id="result" >Сума від: €0.00</p>
+            <p id="result" data-translate-key="modal_total">Сума від: €0.00</p>
             <div class="modal_politics_block">
               <label class="politics_label"
                 ><input type="checkbox" required />
-                <span >Я приймаю</span>
+                <span data-translate-key="accept">Я приймаю</span>
                 <a
                   href="politics.html"
                   class="politics_link"
-              
+                  data-translate-key="politics"
                   >Політику конфіденційності</a
                 ></label
               >
             </div>
 
-            <button class="form_button" type="submit">
+            <button class="form_button" type="submit" data-translate-key="signService">
               Записатися на сервіс
             </button>
           </form>
@@ -661,7 +668,7 @@
     <div class="clients" id="clients">
       <div class="container">
         <div class="clients_content">
-          <h2 class="clients_title" clientsTitle">Наші Клієнти</h2>
+          <h2 class="clients_title" data-translate-key="clients_title">Наші Клієнти</h2>
           <div class="reviews">
             <div class="review_item">
               <img
@@ -671,12 +678,9 @@
                 height="200"
                 alt=""
               />
-              <h3 class="review_item_name">John Doe</h3>
-              <p class="review_item_description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda aspernatur perferendis libero amet vero vel quidem
-                possimus voluptates laudantium expedita! Iste deserunt
-                accusantium error natus consequuntur ex corporis expedita eius.
+              <h3 class="review_item_name" data-translate-key="first_client_name">Андрій Кравчук (Україна)</h3>
+              <p class="review_item_description" data-translate-key="first_client_text">
+                Привозив авто на ремонт ходової частини. Все зробили на найвищому рівні, ще й запропонували безкоштовну діагностику в майбутньому. Сервіс супер, персонал привітний, ціни адекватні!
               </p>
             </div>
 
@@ -688,12 +692,9 @@
                 height="200"
                 alt=""
               />
-              <h3 class="review_item_name">John Doe</h3>
-              <p class="review_item_description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda aspernatur perferendis libero amet vero vel quidem
-                possimus voluptates laudantium expedita! Iste deserunt
-                accusantium error natus consequuntur ex corporis expedita eius.
+              <h3 class="review_item_name" data-translate-key="second_client_name">Олексій Дорошенко (Україна)</h3>
+              <p class="review_item_description" data-translate-key="second_client_text">
+                Звертався в цей автосервіс на діагностику двигуна. Роботу виконали швидко, все детально пояснили. Дуже сподобалася відповідальність майстрів та сучасне обладнання. Тепер тільки до вас! Рекомендую!
               </p>
             </div>
 
@@ -705,12 +706,9 @@
                 height="200"
                 alt=""
               />
-              <h3 class="review_item_name">John Doe</h3>
-              <p class="review_item_description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda aspernatur perferendis libero amet vero vel quidem
-                possimus voluptates laudantium expedita! Iste deserunt
-                accusantium error natus consequuntur ex corporis expedita eius.
+              <h3 class="review_item_name" data-translate-key="third_client_name"> Йоган Келлер (Австрія)</h3>
+              <p class="review_item_description" data-translate-key="third_client_text">
+                Мені порадили цей сервіс друзі. Дуже задоволений високим рівнем обслуговування! Робив ремонт гальмівної системи. Все виконали чітко і вчасно. Надійне місце, яке варто відвідати.
               </p>
             </div>
           </div>
@@ -718,25 +716,25 @@
           <div class="review_counter">
             <div class="counter_item">
               <h2 class="counter_item_number" data-count="7514">0</h2>
-              <p class="counter_item_text" ourProjects">
+              <p class="counter_item_text" data-translate-key="projects">
                 Реалізованих проектів
               </p>
             </div>
             <div class="counter_item">
               <h2 class="counter_item_number" data-count="1030">0</h2>
-              <p class="counter_item_text" ourPolishings">
+              <p class="counter_item_text" data-translate-key="polishings">
                 Кількість поліровок
               </p>
             </div>
             <div class="counter_item">
               <h2 class="counter_item_number" data-count="235">0</h2>
-              <p class="counter_item_text" ourCleaners">
+              <p class="counter_item_text" data-translate-key="cleanings">
                 Кількість хімчисток
               </p>
             </div>
             <div class="counter_item">
               <h2 class="counter_item_number" data-count="5">0</h2>
-              <p class="counter_item_text" ourStudios">
+              <p class="counter_item_text" data-translate-key="studios">
                 Кількість студій
               </p>
             </div>
@@ -757,15 +755,15 @@
       <div class="container">
         <div class="feedback_content">
           <div class="feedback_shedule">
-            <h3 class="shedule_title" >
+            <h3 class="shedule_title" data-translate-key="shedule_title">
               Графік Роботи
             </h3>
-            <p >Пн 8:00 - 22:00</p>
-            <p >Вт 8:00 - 22:00</p>
-            <p >Ср 8:00 - 22:00</p>
-            <p >Чт 8:00 - 22:00</p>
-            <p>Пт 8:00 - 22:00</p>
-            <p >Сб,Нд - По домовленості</p>
+            <p data-translate-key="monday">Пн 8:00 - 22:00</p>
+            <p data-translate-key="tuesday">Вт 8:00 - 22:00</p>
+            <p data-translate-key="wednesday">Ср 8:00 - 22:00</p>
+            <p data-translate-key="thursday">Чт 8:00 - 22:00</p>
+            <p data-translate-key="friday">Пт 8:00 - 22:00</p>
+            <p data-translate-key="weekend">Сб,Нд - По домовленості</p>
           </div>
           <div>
             <form class="feedback_form">
@@ -788,19 +786,21 @@
               </div>
               <div class="form-group">
                 <input
+                name="car_name"
                   type="text"
                   placeholder="Введіть назву вашого авто..."
+                  id="car_name_input"
                   required
                 />
               </div>
               <div>
                 <label class="politics_label"
                   ><input type="checkbox" required />
-                  <span > Я приймаю </span>
+                  <span data-translate-key="accept"> Я приймаю </span>
                   <a
                     href="politics.html"
                     class="politics_link"
-                  
+                    data-translate-key="politics"
                     >Політику конфіденційності</a
                   ></label
                 >
@@ -808,7 +808,7 @@
               <button
                 class="form_button"
                 type="submit"
-               
+               data-translate-key="feedback_btn"
               >
                 Отримати консультацію
               </button>
@@ -821,11 +821,9 @@
     <div class="works">
       <div class="container">
         <div class="works_content">
-          <h2 class="works_title" >Наші Роботи</h2>
+          <h2 class="works_title" data-translate-key="works_title">Наші Роботи</h2>
           <div class="swiper">
-            <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
-              <!-- Каждый слайд должен иметь класс swiper-slide -->
               <div class="swiper-slide">
                 <img
                   src="img/work1.jpg"
@@ -865,25 +863,24 @@
       <div class="container">
         <div class="footer_content">
           <div class="footer_address">
-            <h3 class="footer_title" >Адреса</h3>
+            <h3 class="footer_title" data-translate-key="footer_address">Адреса</h3>
             <a
               href="https://www.google.com/maps/dir//%D1%83%D0%BB.+%D0%93%D0%BB%D1%83%D0%B1%D0%BE%D1%87%D0%B8%D1%86%D0%BA%D0%B0%D1%8F,+101,+%D0%9A%D0%B8%D0%B5%D0%B2,+02000/@50.4633817,30.5036264,17z/data=!4m18!1m8!3m7!1s0x40d4ce694535f6cf:0x3e5e781827ce7483!2z0YPQuy4g0JPQu9GD0LHQvtGH0LjRhtC60LDRjywgMTAxLCDQmtC40LXQsiwgMDIwMDA!3b1!8m2!3d50.4633783!4d30.5062067!16s%2Fg%2F11vjlznl8m!4m8!1m0!1m5!1m1!1s0x40d4ce694535f6cf:0x3e5e781827ce7483!2m2!1d30.5062067!2d50.4633783!3e3?entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               class="footer_link"
-              >Київ, вул. Глибочицька, 101</a
-            >
-            <a href="tel:+431234567" class="footer_link" 
-              >Тел.: +380 67 946 5060</a
+              >Gleisdorf, Laßnitzthal 300, 8200</a>
+            <a href="tel:+380665809263" class="footer_link"
+              >Тел.: +380665809263</a
             >
             <a
-              href="mailto:serviceauto@gmail.com"
+              href="mailto:info.autodienst.at@gmail.com"
               target="_blank"
               class="footer_link"
-              >Ел. пошта: serviceauto@gmail.com</a
+              >Ел. пошта: info.autodienst.at@gmail.com</a
             >
           </div>
           <div class="footer_nav">
-            <h3 class="footer_title" >Навігація</h3>
+            <h3 class="footer_title" data-translate-key="footer_nav">Навігація</h3>
             <a href="#top_header" class="footer_link" 
               >Головна</a
             >
@@ -895,23 +892,23 @@
             >
           </div>
           <div class="footer_socials">
-            <h3 class="footer_title" >
+            <h3 class="footer_title" data-translate-key="footer_socials">
               Наші соцмережі
             </h3>
             <a
-              href="https://www.youtube.com"
+              href="viber://chat?number=%2B380665809263
               target="_blank"
               class="footer_link"
-              >YouTube</a
+              >Viber</a
             >
             <a
-              href="https://www.facebook.com"
+              href="https://t.me/+380665809263"
               target="_blank"
               class="footer_link"
-              >Facebook</a
+              >Telegram</a
             >
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/turboautoservice/profilecard/?igsh=MXNycGN1ZHptMjg5cQ=="
               target="_blank"
               class="footer_link"
               >Instagram</a
@@ -927,6 +924,7 @@
         Copyright © 2024<a
           href="politics.html"
           class="politics_link"
+          data-translate-key="politics"
           >ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</a
         >
       </p>
