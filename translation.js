@@ -325,6 +325,11 @@ const translations = {
     en: "Sat, Sun - By appointment",
     de: "Sa, So - Nach Vereinbarung",
   },
+  feedback_title: {
+    ua: "Заповніть форму для зв’язку!",
+    en: "Fill out the contact form!",
+    de: "Füllen Sie das Kontaktformular aus!",
+  },
   works_title: {
     ua: "Наші Роботи",
     en: "Our Works",
