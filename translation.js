@@ -705,6 +705,66 @@ const translations = {
     en: "Processing and delivery of the order to the Buyer’s ownership under the terms of this Agreement.",
     de: "Bearbeitung und Lieferung der Bestellung an den Käufer im Rahmen dieses Vertrages.",
   },
+  offerta_tenth_li: {
+    ua: "в односторонньому порядку припинити надання послуг за цим договором у разі порушення Покупцем умов цього договору.",
+    en: "Unilaterally terminate the provision of services under this agreement in case of violation of the terms of this agreement by the Buyer.",
+    de: "Die einseitige Beendigung der Dienstleistungserbringung im Rahmen dieses Vertrages im Falle der Verletzung der Vertragsbedingungen durch den Käufer.",
+  },
+  offerta_eleventh_li: {
+    ua: "своєчасно оплатити та отримати замовлення на умовах цього договору.",
+    en: "Timely pay for and receive the order under the terms of this agreement.",
+    de: "Die rechtzeitige Zahlung und den Erhalt der Bestellung zu den Bedingungen dieses Vertrages.",
+  },
+  offerta_twelfth_li: {
+    ua: "оформити замовлення в Інтернет-магазині;",
+    en: "Place an order in the Online Store;",
+    de: "Eine Bestellung im Online-Shop aufgeben;",
+  },
+  offerta_thirteenth_li: {
+    ua: "оформити електронний договір;",
+    en: "Conclude an electronic agreement;",
+    de: "Einen elektronischen Vertrag abschließen;",
+  },
+  offerta_fourteenth_li: {
+    ua: "вимагати від Продавця виконання умов цього Договору.",
+    en: "Demand from the Seller the fulfillment of the terms of this Agreement.",
+    de: "Vom Verkäufer die Erfüllung der Bedingungen dieses Vertrages verlangen.",
+  },
+  offerta_fiveteenth_li: {
+    ua: "змінений виробником зовнішній вигляд Товару;",
+    en: "Changes to the external appearance of the Product made by the manufacturer;",
+    de: "Änderungen des äußeren Erscheinungsbildes des Produkts, die vom Hersteller vorgenommen wurden;",
+  },
+  offerta_sixteenth_li: {
+    ua: "за незначне невідповідність колірної гами товару, що може відрізнятися від оригіналу товару виключно через різній колірній передачі моніторів персональних комп'ютерів окремих моделей;",
+    en: "Minor discrepancies in the color scheme of the product, which may differ from the original product solely due to the different color representation of personal computer monitors of certain models;",
+    de: "Geringfügige Abweichungen im Farbschema des Produkts, die nur aufgrund unterschiedlicher Farbdarstellung von Monitoren verschiedener Computermodelle vom Originalprodukt abweichen können;",
+  },
+  offerta_seventeenth_li: {
+    ua: "за зміст і правдивість інформації, наданої Покупцем при оформленні замовлення;",
+    en: "The content and accuracy of the information provided by the Buyer when placing the order;",
+    de: "Der Inhalt und die Richtigkeit der Informationen, die der Käufer bei der Bestellung angegeben hat;",
+  },
+  offerta_eighteen_li: {
+    ua: "за затримку і перебої в наданні Послуг (обробки замовлення та доставки товару), які відбуваються з причин, що знаходяться поза сферою його контролю;",
+    en: "Delays and interruptions in providing Services (order processing and delivery of the product) that occur due to reasons beyond the Seller's control;",
+    de: "Verzögerungen und Unterbrechungen bei der Erbringung von Dienstleistungen (Bestellbearbeitung und Lieferung des Produkts), die aufgrund von Faktoren außerhalb der Kontrolle des Verkäufers auftreten;",
+  },
+  offerta_nineteen_li: {
+    ua: "за зміну ціни на товар після його замовлення, коли ціна змінюється постачальником під час відвантаження товара чи зміні курса іноземної валюти;",
+    en: "Price changes for the product after the order is placed, when the price is altered by the supplier during shipment or due to changes in the foreign exchange rate;",
+    de: "Preisänderungen des Produkts nach der Bestellung, wenn der Preis durch den Lieferanten während des Versands oder aufgrund von Änderungen des Wechselkurses geändert wird;",
+  },
+  offerta_twenty_li: {
+    ua: "за протиправні незаконні дії, здійснені Покупцем за допомогою даного доступу до мережі Інтернет;",
+    en: "Unlawful actions committed by the Buyer using this access to the Internet network;",
+    de: "Illegale Handlungen des Käufers unter Nutzung dieses Zugriffs auf das Internetnetzwerk;",
+  },
+  offerta_twentyone_li: {
+    ua: "за передачу Покупцем своїх мережевих ідентифікаторів - IP, MAC-адреси, логіна і пароля третім особам.",
+    en: "The transfer by the Buyer of their network identifiers – IP, MAC addresses, login, and password to third parties.",
+    de: "Die Weitergabe von Netzwerkinformationen des Käufers – IP, MAC-Adresse, Login und Passwort an Dritte.",
+  },
 };
 
 // Текущий язык (по умолчанию — английский)
