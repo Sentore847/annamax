@@ -363,7 +363,7 @@ const translations = {
 };
 
 // Текущий язык (по умолчанию — английский)
-let currentLang = localStorage.getItem("selectedLang");
+let currentLang = localStorage.getItem("selectedLang") || "de";
 
 // Функция обновления переводов
 function updateTranslation() {
