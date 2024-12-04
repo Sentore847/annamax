@@ -570,7 +570,7 @@ const translations = {
     en: "8.4. In the event of force majeure circumstances, the parties are relieved from fulfilling the terms of this agreement. For the purposes of this agreement, force majeure circumstances are events that are extraordinary, unforeseen, and that exclude or objectively hinder the fulfillment of this agreement, the occurrence of which the Parties could not foresee and prevent by reasonable means.",
     de: "8.4. Im Falle von höherer Gewalt sind die Parteien von der Erfüllung der Bedingungen dieses Vertrags befreit. Höhere Gewalt im Sinne dieses Vertrags sind außergewöhnliche, unvorhersehbare Ereignisse, die die Erfüllung dieses Vertrags ausschließen oder objektiv hindern und deren Eintreten die Parteien nicht vorhersehen oder mit angemessenen Mitteln verhindern konnten.",
   },
-  offerta_twenthree_p: {
+  offerta_twentythree_p: {
     ua: "8.5. Сторони прикладають максимум зусиль для вирішення будь-яких розбіжностей виключно шляхом переговорів.",
     en: "8.5. The parties shall make every effort to resolve any disagreements solely through negotiations.",
     de: "8.5. Die Parteien werden alle Anstrengungen unternehmen, um etwaige Unstimmigkeiten ausschließlich durch Verhandlungen zu lösen.",
