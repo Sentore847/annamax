@@ -4,30 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Auto Service Politics</title>
+    <script src="translation.js" defer></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="politics.css" />
   </head>
   <body>
-    <header>
+    <header style="display: block;">
       <div class="main_header">
         <div class="header_nav">
           <nav>
             <a href="index.html" class="header_nav_link"
-              >&#8592; Повернутись до сайту</a
+              >&#8592;
+              <span data-translate-key="backsite">Повернутись до сайту</span></a
             >
           </nav>
+          <div class="lang_switcher">
+            <select id="lang_select">
+              <option value="de">Deutsch</option>
+              <option value="en">English</option>
+              <option value="ua">Українська</option>
+            </select>
+          </div>
         </div>
       </div>
     </header>
     <section class="main_section">
       <div class="politics_block">
-        <h1>ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</h1>
-        <p>
+        <h1 data-translate-key="politics_privacy">ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</h1>
+        <p data-translate-key="politics_first_p">
           ФОП Колісник Т.М. з повагою ставиться до конфіденційної інформації
           будь-якої особи, яка відвідує наш інтернет-сайт. Всі Ваші дані
           збираються, обробляються і використовуються у відповідності до вимог
           чинного законодавства України.
         </p>
-        <p>
+        <p data-translate-key="politics_second_p">
           Ми збираємо інформацію, яка стосується наших клієнтів, з метою
           використання її для можливості надавати повного обсягу наших послуг, і
           лише в тому випадку, якщо Ви добровільно надали інформацію або
@@ -38,7 +48,7 @@
           рішення або в іншому порядку, передбаченому чинним законодавством
           України.
         </p>
-        <p>
+        <p data-translate-key="politics_third_p">
           Збережені дані будуть видалені з бази даних ФОП Колісник Т.М. після
           збігання періоду зберігання, встановленого законодавством, або у
           випадку, якщо більше не потребує збереження тих або інших даних. Ви
@@ -51,7 +61,10 @@
     </section>
     <div class="copyright">
       <p class="copyright_text">
-        Copyright © 2024<a href="oferta.html" class="politics_link"
+        Copyright © 2024<a
+          href="oferta.html"
+          class="politics_link"
+          data-translate-key="offerta"
           >Договір оферти</a
         >
       </p>

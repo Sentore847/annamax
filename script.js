@@ -10,8 +10,6 @@ const modalResult = document.getElementById("result");
 const modalPhoneInput = document.querySelector(".input_phone");
 const lang = localStorage.getItem("selectedLang");
 
-console.log(lang);
-
 //Close Modal
 function closeModal() {
   const lang = localStorage.getItem("selectedLang");
@@ -27,8 +25,6 @@ function closeModal() {
       ? "Сума від: €0.00"
       : "Language not supported";
   modalPhoneInput.style.border = "";
-
-  console.log(lang);
 }
 
 function resetFormFields() {
