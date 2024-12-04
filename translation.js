@@ -363,11 +363,10 @@ const translations = {
 };
 
 // Текущий язык (по умолчанию — английский)
-let currentLang = "de";
+let currentLang = localStorage.getItem("selectedLang");
 
 // Функция обновления переводов
 function updateTranslation() {
-  // Находим все элементы с data-translate-key
   const elements = document.querySelectorAll("[data-translate-key]");
 
   elements.forEach((element) => {
@@ -400,8 +399,16 @@ function updateTranslation() {
 // Слушатель изменения языка
 document.getElementById("lang_select").addEventListener("change", (event) => {
   currentLang = event.target.value; // Получаем выбранный язык
+  localStorage.setItem("selectedLang", currentLang); // Сохраняем выбранный язык
   updateTranslation(); // Обновляем перевод
 });
 
-// Инициализация перевода при загрузке страницы
-updateTranslation();
+// Устанавливаем язык из LocalStorage при загрузке страницы
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("selectedLang");
+  if (savedLang) {
+    currentLang = savedLang; // Устанавливаем язык из LocalStorage
+    document.getElementById("lang_select").value = savedLang; // Устанавливаем значение в select
+  }
+  updateTranslation(); // Обновляем перевод
+});

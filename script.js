@@ -7,19 +7,14 @@ const closeModalBtn = document.querySelector(".modal_close_btn");
 const modalForm = document.querySelector(".modal_form");
 const langSelect = document.getElementById("lang_select");
 const modalResult = document.getElementById("result");
-const lang = langSelect.value;
 const modalPhoneInput = document.querySelector(".input_phone");
+const lang = localStorage.getItem("selectedLang");
 
-function resetFormFields() {
-  const form = modalWindow.querySelector(".modal_form");
-  form.reset();
-  form.querySelector('input[type="tel"]').value = "+43";
-  document.getElementById("car_model").innerHTML =
-    '<option value="" disabled selected>Спочатку оберіть марку авто!</option>';
-}
+console.log(lang);
 
 //Close Modal
 function closeModal() {
+  const lang = localStorage.getItem("selectedLang");
   modalWindow.classList.remove("active");
   closeModalBtn.classList.remove("active");
   resetFormFields();
@@ -32,6 +27,16 @@ function closeModal() {
       ? "Сума від: €0.00"
       : "Language not supported";
   modalPhoneInput.style.border = "";
+
+  console.log(lang);
+}
+
+function resetFormFields() {
+  const form = modalWindow.querySelector(".modal_form");
+  form.reset();
+  form.querySelector('input[type="tel"]').value = "+43";
+  document.getElementById("car_model").innerHTML =
+    '<option value="" disabled selected>Спочатку оберіть марку авто!</option>';
 }
 
 cardButtons.forEach((button) => {

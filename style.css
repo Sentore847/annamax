@@ -147,12 +147,13 @@ header {
 
 .lang_switcher {
   position: absolute;
-  top: 25%;
+  top: -4%;
   right: 10%;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
 }
 
 .lang_switcher select {
@@ -1070,7 +1071,7 @@ input:focus {
 @media screen and (max-width: 1120px) {
   .lang_switcher {
     position: absolute;
-    top: 25%;
+    top: -4%;
     right: 1%;
   }
 }
@@ -1097,6 +1098,16 @@ input:focus {
   }
 }
 
+@media screen and (max-width: 1007px) {
+  .feedback_form {
+    width: 350px;
+  }
+
+  .header_nav_link {
+    font-size: 12px;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .feedback_form {
     width: 400px;
@@ -1114,7 +1125,7 @@ input:focus {
 
   .lang_switcher {
     position: absolute;
-    top: 30%;
+    top: -4%;
     right: 1%;
   }
 
@@ -1151,6 +1162,7 @@ input:focus {
 
   .feedback_form {
     padding: 35px 20px;
+    width: 300px;
   }
 
   .form-group input {
@@ -1193,6 +1205,16 @@ input:focus {
   .header_nav_link {
     font-size: 12px;
   }
+
+  .counter_item_text {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .header_nav_link {
+    font-size: 8px;
+  }
 }
 
 @media screen and (max-width: 680px) {
@@ -1206,11 +1228,35 @@ input:focus {
   .feedback_form {
     width: 300px;
   }
+
+  .lang_switcher {
+    position: absolute;
+    top: 10px;
+    right: 50%;
+    z-index: 100;
+  }
+
+  .burger-nav {
+    width: 600px;
+  }
+
+  .header_nav_link {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .lang_switcher select {
+    padding: 10px 40px 10px 10px;
+  }
 }
 
 @media screen and (max-width: 640px) {
   .container {
     max-width: 550px;
+  }
+
+  .burger-nav {
+    width: 400px;
   }
 
   .about_text p {
@@ -1281,6 +1327,18 @@ input:focus {
     max-width: 400px;
   }
 
+  .counter_item_text {
+    font-size: 10px;
+  }
+
+  .about_figures {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
+  }
+
   .form_button {
     margin-top: 20px;
     padding: 20px;
@@ -1345,6 +1403,10 @@ input:focus {
     height: 300px;
     object-fit: cover;
   }
+
+  .feedback_form {
+    width: 250px;
+  }
 }
 
 @media screen and (max-width: 470px) {
@@ -1359,9 +1421,17 @@ input:focus {
   .politics_label {
     font-size: 10px;
   }
+
+  .figure {
+    font-size: 24px;
+  }
+
+  .burger-nav {
+    width: 250px;
+  }
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 399px) {
   .container {
     max-width: 370px;
   }
