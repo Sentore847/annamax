@@ -482,7 +482,7 @@ feedbackForm.addEventListener("submit", (e) => {
       close: true,
       gravity: "top",
       position: "center",
-      backgroundColor: "#FF6347", // Красный для ошибки
+      backgroundColor: "#FF6347",
     }).showToast();
     phoneInput.style.border = "2px solid red";
     return;
